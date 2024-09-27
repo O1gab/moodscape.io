@@ -13,6 +13,8 @@ function App() {
         <h1>MoodScape</h1>
         <p>Let your emotions set the playlist.</p>
         <a href="#features" className="cta-button">Explore Now</a>
+
+        <img src={require('./images/app_views.png')} alt="App View" className="app-views-image" />
       </header>
 
        {/* App Description Section */}

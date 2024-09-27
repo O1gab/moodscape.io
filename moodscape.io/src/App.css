@@ -26,6 +26,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-views-image {
+  width: 100%;
+  position: absolute;
+  margin-top: 20px;
+  position: absolute;
+  bottom: -500px;
 }
 
 .hero-section h1 {
