@@ -12,6 +12,7 @@
 
 .tab {
   color: white; /* Text color */
+  font-weight: 500;
   text-decoration: none; /* Remove underline */
   padding: 10px 15px; /* Padding for clickable area */
   transition: background-color 0.3s; /* Smooth background change */
@@ -19,4 +20,5 @@
 
 .tab:hover {
   background-color: #555; /* Change background color on hover */
+  border-radius: 25px;
 }
