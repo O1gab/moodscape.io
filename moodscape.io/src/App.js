@@ -19,6 +19,7 @@ function App() {
 
        {/* App Description Section */}
       <section className="app-description-section">
+        <div className="app-description-box">
         <h2>What is MoodScape?</h2>
         <p>
           MoodScape is a music discovery app designed to curate playlists based on your current mood. 
@@ -27,6 +28,7 @@ function App() {
           and let MoodScape generate a personalized playlist that resonates with you. 
           Experience music like never before!
         </p>
+        </div>
       </section>
 
       {/* Features Section */}
