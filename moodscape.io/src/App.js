@@ -16,6 +16,18 @@ function App() {
         <a href="#features" className="cta-button">Explore Now</a>
       </header>
 
+       {/* App Description Section */}
+      <section className="app-description-section">
+        <h2>What is MoodScape?</h2>
+        <p>
+          MoodScape is a music discovery app designed to curate playlists based on your current mood. 
+          Whether you're feeling happy, sad, or anything in between, MoodScape helps you connect with the 
+          right music to enhance your emotions. With our easy-to-use interface, simply select your mood 
+          and let MoodScape generate a personalized playlist that resonates with you. 
+          Experience music like never before!
+        </p>
+      </section>
+
       {/* Features Section */}
       <section className="features-section" id="features">
         <h2>Why MoodScape?</h2>
