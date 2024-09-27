@@ -6,8 +6,8 @@ const TabBar = () => {
   return (
     <div className="tab-bar">
       <a href="#home" className="tab">Home</a>
+      <a href="#download" className="tab">Download</a>
       <a href="#features" className="tab">Features</a>
-      <a href="#signup" className="tab">Sign Up</a>
       <a href="#contact" className="tab">Contact</a>
     </div>
   );
