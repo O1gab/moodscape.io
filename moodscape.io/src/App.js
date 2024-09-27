@@ -31,6 +31,14 @@ function App() {
         </div>
       </section>
 
+       {/* Download Now Button Section */}
+      <section className="download-section">
+        <div className="download-container">
+          <a href="#download" className="download-button">Download Now</a>
+          <p className="download-description">Get the MoodScape app and start creating playlists based on your mood!</p>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="features-section" id="features">
         <h2>Why MoodScape?</h2>
@@ -58,7 +66,7 @@ function App() {
       </section>
 
       {/* Signup Section */}
-      <section className="signup-section" id="signup">
+      <section className="signup-section" id="contact">
         <h2>Sign Up for MoodScape</h2>
         <form>
           <input type="email" placeholder="Enter your email" required />

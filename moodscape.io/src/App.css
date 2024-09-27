@@ -66,50 +66,18 @@ body {
   color: #1dcb5a;
 }
 
-/* Download Section */
-.main-button {
-  padding: 40px 20px; /* Add padding for spacing */
-  text-align: center; /* Center the text */
-  background-color: #f9f9f9; /* Light background color */
-}
-
-.main-button h2 {
-  font-size: 28px; /* Heading size */
-  margin-bottom: 20px; /* Space below the heading */
-}
-
-.main-buttonn p {
-  font-size: 18px; /* Description text size */
-  max-width: 600px; /* Limit the width of the text */
-  margin: 0 auto; /* Center the paragraph */
-}
-
-.main-button {
-  display: inline-block;
-  padding: 10px 20px; /* Button padding */
-  background-color: rgb(91, 91, 91); /* Button color */
-  color: #fff; /* Button text color */
-  text-decoration: none; /* Remove underline */
-  border-radius: 25px; /* Rounded corners */
-  transition: background-color 0.3s; /* Smooth background color transition */
-}
-
-.main-button:hover {
-  background-color: #1e8b45; /* Darker color on hover */
-}
-
 /* App Description Section */
 .app-description-section {
   color: white;
   padding: 20px 20px;
-  text-align: center; /* Center the text */
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .app-description-box {
-  border: 2px solid #1db954; /* White border with 80% opacity */
+  border: 2px solid #1db954;
   padding: 20px;
   border-radius: 25px;
   max-width: 600px;
@@ -130,14 +98,59 @@ body {
   margin-bottom: 30px;
 }
 
+/* Main section container */
+.download-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #1a1a1a; /* Dark background for contrast */
+  color: white;
+}
+
+/* Container for button and description */
+.download-container {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Button styling */
+.download-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 20px;
+  color: white;
+  background-color: #1DB954; /* Spotify green color */
+  border: none;
+  border-radius: 30px; /* Rounded corners */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for button */
+.download-button:hover {
+  background-color: white; /* Darker green on hover */
+  color: #1DB954;
+}
+
+/* Description styling */
+.download-description {
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #cccccc; /* Light grey for description text */
+}
+
 /* Features Section */
 .features-section {
-  padding: 20px 20px;
+  padding: 50px 20px;
+  font-size: 37px;
   text-align: center;
 }
 
 .features-section h2 {
-  font-size: 2.5rem;
+  font-size: 37px;
+  color: white;
   margin-bottom: 30px;
 }
 
@@ -208,13 +221,9 @@ body {
 }
 
 .highlight {
-  color: #1db954; /* Change to your desired green color */
-}
-
-.highlight {
   display: inline-block;
-  background-image: linear-gradient(90deg, #1DB954, #333333, #ffff, #1DB954); /* Spotify green, dark gray, black, and back to green */
-  background-size: 300% 100%; /* Larger background size for smoother transitions */
+  background-image: linear-gradient(90deg, #1DB954, #0f2c12, #8bd585, #1DB954);
+  background-size: 300% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
