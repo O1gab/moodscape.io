@@ -1,0 +1,22 @@
+/* src/TabBar.css */
+
+.tab-bar {
+  display: flex;
+  justify-content: space-around; /* Evenly space items */
+  background-color: #333; /* Background color */
+  padding: 10px 0; /* Vertical padding */
+  position: sticky; /* Keep the tab bar at the top */
+  top: 0; /* Position at the top */
+  z-index: 1000; /* Ensure it’s above other content */
+}
+
+.tab {
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Padding for clickable area */
+  transition: background-color 0.3s; /* Smooth background change */
+}
+
+.tab:hover {
+  background-color: #555; /* Change background color on hover */
+}
