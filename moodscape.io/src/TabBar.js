@@ -1,6 +1,6 @@
 // src/TabBar.js
 import React from 'react';
-import './TabBar.css'; // You can create a CSS file for styling
+import './TabBar.css';
 
 const TabBar = () => {
   return (
