@@ -23,7 +23,7 @@ function App() {
         <div className="app-description-box">
         <h2>What is <span className="highlight">MoodScape</span>?</h2>
         <p>
-          MoodScape is a music discovery app designed to create playlists based on your current mood. 
+          <strong>MoodScape</strong> is a music discovery app designed to create playlists based on your current mood. 
           Whether you're feeling happy, sad, or anything in between, MoodScape helps you connect with the 
           right music to enhance your emotions. With our easy-to-use interface, simply select your mood 
           and let MoodScape generate a personalized playlist that resonates with you. 
@@ -64,11 +64,8 @@ function App() {
       </section>
 
       {/* FAQ Section */}
+      <FAQ />
       
-            <FAQ />
-           
-
-
       {/* Call to Action */}
       <section className="cta-section">
         <h2>Ready to Discover New Moods?</h2>
