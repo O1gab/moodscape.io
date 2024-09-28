@@ -1,6 +1,7 @@
 // src/App.js
 import React from 'react';
-import TabBar from './TabBar'; // Import the TabBar component
+import TabBar from './TabBar';
+import FAQ from './FAQ';
 import './App.css';
 
 function App() {
@@ -61,6 +62,12 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      
+            <FAQ />
+           
+
 
       {/* Call to Action */}
       <section className="cta-section">
