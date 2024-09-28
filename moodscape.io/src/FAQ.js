@@ -59,6 +59,22 @@ function FAQ() {
             </div>
                   )}
         </div>
+        
+        {/* FAQ Item 4 */}
+        <div className="faq-item">
+          <button 
+            className="faq-question" 
+            onClick={() => toggleAnswer(4)} 
+            aria-expanded={openAnswer === 4}
+          >
+            Do I need a Spotify account to use the app?
+          </button>
+          {openAnswer === 4 && (
+            <div className="faq-answer">
+              <p>Yes.</p>
+            </div>
+            )}
+        </div>
       </div>
     </section>
   );
