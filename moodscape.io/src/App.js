@@ -48,12 +48,16 @@ function App() {
             <p>Generate playlists based on how you're feeling right now.</p>
           </div>
           <div className="feature">
-            <h3>Trends</h3>
-            <p>Be in touch with new music releases.</p>
+            <h3>Discrover new music & recommendations</h3>
+            <p>Be in touch with new music releases and get music recommendations based on your music taste.</p>
           </div>
           <div className="feature">
             <h3>Spotify Integration</h3>
             <p>Connect your Spotify account and start listening instantly.</p>
+          </div>
+          <div className="feature">
+            <h3>Unlock new experience for free</h3>
+            <p>MoodScape is completely free to use! Dive into a world of music and mood exploration without spending any cent.</p>
           </div>
         </div>
       </section>
@@ -61,7 +65,7 @@ function App() {
       {/* Call to Action */}
       <section className="cta-section">
         <h2>Ready to Discover New Moods?</h2>
-        <p>Sign up now and start creating your own personalized playlists.</p>
+        <p>Sign up now and start creating your own personalized playlists</p>
         <a href="#signup" className="cta-button">Get Started for Free</a>
       </section>
 
