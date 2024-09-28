@@ -101,7 +101,6 @@ body {
 .download-section {
   text-align: center;
   padding: 150px 20px;
-  background-color: #1a1a1a; /* Dark background for contrast */
   color: white;
 }
 
@@ -109,6 +108,10 @@ body {
 .download-container {
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  border-radius: 25px;
+  max-width: 600px;
+  /*background-color: #1a1a1a;*/
 }
 
 /* Button styling */
@@ -117,9 +120,9 @@ body {
   padding: 15px 30px;
   font-size: 20px;
   color: white;
-  background-color: #1DB954; /* Spotify green color */
+  background-color: #1DB954;
   border: none;
-  border-radius: 30px; /* Rounded corners */
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
@@ -128,22 +131,24 @@ body {
 
 /* Hover effect for button */
 .download-button:hover {
-  background-color: white; /* Darker green on hover */
+  background-color: white;
   color: #1DB954;
 }
 
 /* Description styling */
 .download-description {
-  margin-top: 10px;
+  margin-top: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  color: #cccccc; /* Light grey for description text */
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 /* Features Section */
 .features-section {
-  padding: 50px 20px;
+  padding: 20px 20px;
   font-size: 37px;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -160,12 +165,13 @@ body {
 }
 
 .feature {
-  background-color: blue;
+  border: 2px solid #1db954;
   border-radius: 25px;
   font-family: Arial, Helvetica, sans-serif;
   padding: 20px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 50px rgba(0, 255, 47, 0.3);
   max-width: 300px;
+  margin-bottom: 200px;
 }
 
 .feature h3 {
