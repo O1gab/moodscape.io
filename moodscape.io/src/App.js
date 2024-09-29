@@ -68,17 +68,18 @@ function App() {
       
       {/* Call to Action */}
       <section className="cta-section">
-        <h2>Ready to Discover New Moods?</h2>
-        <p>Sign up now and start creating your own personalized playlists</p>
-        <a href="#signup" className="cta-button">Get Started for Free</a>
-      </section>
+        <h2>Want to be the first to try MoodScape?</h2>
+        <p>Sign up now to get notified when MoodScape is released and create your personalized playlists based on your mood.</p>
 
-      {/* Signup Section */}
-      <section className="signup-section" id="contact">
-        <h2>Sign Up for MoodScape</h2>
-        <form>
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit">Sign Up</button>
+        {/* Email Sign Up Form */}
+        <form className="cta-form">
+          <input
+            type="email"
+            className="email-input"
+            placeholder="Enter your email address"
+            required
+          />
+          <button type="submit" className="cta-button">Notify Me</button>
         </form>
       </section>
 
