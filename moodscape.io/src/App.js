@@ -86,6 +86,7 @@ function App() {
       {/* Footer */}
       <footer>
         <p>© 2024 MoodScape. All rights reserved.</p>
+        <p>For any questions or information, feel free to send us an email at <a href="mailto:contact@moodscape.io">contact@moodscape.io</a>.</p>
       </footer>
     </div>
   );
