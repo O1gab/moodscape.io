@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.cb3b2d89.css",
-    "main.js": "/static/js/main.ad3171c8.js",
-    "static/js/453.7f991bbe.chunk.js": "/static/js/453.7f991bbe.chunk.js",
-    "static/media/app_views.png": "/static/media/app_views.f603f1396574385e5ddd.png",
-    "index.html": "/index.html",
-    "main.cb3b2d89.css.map": "/static/css/main.cb3b2d89.css.map",
-    "main.ad3171c8.js.map": "/static/js/main.ad3171c8.js.map",
-    "453.7f991bbe.chunk.js.map": "/static/js/453.7f991bbe.chunk.js.map"
+    "main.css": "/moodscape.io/static/css/main.cb3b2d89.css",
+    "main.js": "/moodscape.io/static/js/main.beb16d9d.js",
+    "static/js/453.7f991bbe.chunk.js": "/moodscape.io/static/js/453.7f991bbe.chunk.js",
+    "static/media/app_views.png": "/moodscape.io/static/media/app_views.f603f1396574385e5ddd.png",
+    "index.html": "/moodscape.io/index.html",
+    "main.cb3b2d89.css.map": "/moodscape.io/static/css/main.cb3b2d89.css.map",
+    "main.beb16d9d.js.map": "/moodscape.io/static/js/main.beb16d9d.js.map",
+    "453.7f991bbe.chunk.js.map": "/moodscape.io/static/js/453.7f991bbe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb3b2d89.css",
-    "static/js/main.ad3171c8.js"
+    "static/js/main.beb16d9d.js"
   ]
 }
