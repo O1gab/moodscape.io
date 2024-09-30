@@ -163,15 +163,17 @@ body {
 }
 
 .features-section h2 {
-  font-size: 37px;
+  font-size: 2.5rem;
   color: white;
   margin-bottom: 100px;
 }
 
 .features {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 50px;
+  gap: 10px;
   max-width: 100%;
   overflow-x: auto;
   padding: 0 20px;
@@ -184,24 +186,67 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 20px;
   box-shadow: 0 0 50px rgba(0, 255, 47, 0.3);
-  width: 280px;
-  height: 200px;
+  width: 270px;
+  height: 190px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .feature h3 {
   font-size: 1.5rem;
-  margin-top: 20px;
+  margin: 10px 0;
 }
 
 .feature p {
   font-size: 1.1rem;
   margin-top: -10px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column; /* Switch to column layout on mobile */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .feature {
+    width: 90%; /* Make the boxes take up most of the screen */
+    height: auto; /* Adjust the height to fit content */
+    padding: 15px;
+  }
+
+  .feature h3 {
+    font-size: 1.2rem; /* Adjust font size */
+  }
+
+  .feature p {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .feature {
+    width: 100%; /* Full width on very small screens */
+  }
+
+  .feature h3 {
+    font-size: 1rem; /* Smaller heading on small devices */
+  }
+
+  .feature p {
+    font-size: 0.9rem; /* Smaller paragraph text */
+  }
 }
 
 /* FAQ Section Styling */
