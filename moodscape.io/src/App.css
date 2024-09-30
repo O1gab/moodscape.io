@@ -32,10 +32,20 @@ body {
 
 .app-views-image {
   width: 100%;
+  height: auto;
   position: absolute;
   margin-top: 20px;
   position: absolute;
   bottom: -500px;
+  overflow-x: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .app-views-image {
+    min-width: 1920px; /* Prevents the image from getting smaller */
+    width: auto; /* Allows the image to expand */
+  }
 }
 
 .hero-section h1 {
