@@ -21,6 +21,7 @@
 
 .modal-content {
   font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #1db954;
   background: #201f1f;
   border-radius: 25px;
   padding: 20px;

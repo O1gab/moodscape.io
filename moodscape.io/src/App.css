@@ -34,8 +34,7 @@ body {
   width: 100%;
   height: auto;
   position: absolute;
-  margin-top: 20px;
-  position: absolute;
+  margin-top: 100px;
   bottom: -500px;
   overflow-x: auto;
   object-fit: cover;
