@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState } from 'react';
-import TabBar from './TabBar';
+import TabBar from './components/TabBar/TabBar';
 import FAQ from './components/FAQ/FAQ';
 import Modal from './components/Modal/Modal';
 import './App.css';
