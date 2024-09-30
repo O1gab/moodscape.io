@@ -1,10 +1,22 @@
 // src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import TabBar from './TabBar';
-import FAQ from './FAQ';
+import FAQ from './components/FAQ/FAQ';
+import Modal from './components/Modal/Modal';
 import './App.css';
 
 function App() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+
+  const handleDownloadClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="App">
       {/* TabBar Component */}
@@ -35,10 +47,13 @@ function App() {
        {/* Download Now Button Section */}
       <section className="download-section">
         <div className="download-container">
-          <a href="#download" className="download-button">Download Now</a>
+          <a href="#" onClick={handleDownloadClick} className="download-button">Download Now</a>
           <p className="download-description">Get the MoodScape app and start creating playlists based on your mood!</p>
         </div>
       </section>
+
+      {/* Modal Component */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
 
       {/* Features Section */}
       <section className="features-section" id="features">
