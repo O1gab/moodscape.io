@@ -9,7 +9,10 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: white;
-  background-color: black;
+  /*background-color: black;*/
+  background-image: url('images/basic_gradient.png');
+  background-size: cover;
+  background-position-x: 0%;
 }
 
 .hero-section {
@@ -38,12 +41,14 @@ body {
   bottom: -500px;
   overflow-x: auto;
   object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 768px) {
   .app-views-image {
-    min-width: 1920px; /* Prevents the image from getting smaller */
-    width: auto; /* Allows the image to expand */
+    width: 100vw;
+    min-width: unset;
+    object-position: center;
   }
 }
 
@@ -65,6 +70,7 @@ body {
   border-radius:305px;
   text-decoration: none;
   margin-top: 15px;
+  margin-bottom: 50px;
   font-size: 1.2rem;
   transition: background-color 0.3s;
 }
