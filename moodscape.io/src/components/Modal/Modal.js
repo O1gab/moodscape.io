@@ -4,6 +4,7 @@ import './Modal.css';
 const Modal = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   if (!isOpen) return null;
 
@@ -21,6 +22,13 @@ const Modal = ({ isOpen, onClose }) => {
         body: JSON.stringify({ email: emailToSubmit }), // Submit the email from state
       });
 
+      if (response.status === 409) {
+      // If the response status is 409 (Conflict), the email already exists
+        const data = await response.json();
+        setErrorMessage(data.message); // Set the error message
+        return;
+      }
+      
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -30,8 +38,10 @@ const Modal = ({ isOpen, onClose }) => {
       
       setSubmitted(true); // Update the submitted state to true
       setEmail(''); // Clear the email input after submission
+      setErrorMessage(''); // Clear error message on success
     } catch (error) {
       console.error('Error:', error);
+      setErrorMessage('Something went wrong. Please try again.');
     }
   };
 
