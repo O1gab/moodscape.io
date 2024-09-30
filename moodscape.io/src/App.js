@@ -7,9 +7,10 @@ import './App.css';
 
 function App() {
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleDownloadClick = () => {
+  const handleDownloadClick = (event) => {
+    event.preventDefault();
     setIsModalOpen(true);
   };
 
