@@ -1,3 +1,17 @@
+.success-message {
+  color: #1db954;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -76,5 +90,6 @@
 }
 
 .cta-button:hover {
-  background-color: #17a74a; /* Darker green on hover */
+  background-color: #ffffff; /* Darker green on hover */
+  color: #1db954
 }
