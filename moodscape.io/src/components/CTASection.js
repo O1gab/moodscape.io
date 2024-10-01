@@ -19,7 +19,11 @@ const CTASection = () => {
       if (response.ok) {
         setSubmitted(true);
         setEmail('');
-      }
+      } else {
+        const errorText = await response.text(); // Get error message
+        console.error('Server Error:', errorText);
+        alert('Something went wrong. Please try again.'); // Show alert to user
+    }
     }
   };
 
