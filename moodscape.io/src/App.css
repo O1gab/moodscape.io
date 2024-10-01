@@ -400,3 +400,7 @@ footer a:hover {
     background-position: 300% center;
   }
 }
+
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
