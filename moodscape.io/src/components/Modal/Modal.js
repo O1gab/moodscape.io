@@ -73,7 +73,7 @@ const Modal = ({ isOpen, onClose }) => {
         ) : (
           <div>
             <p className="success-message">Thanks for signing up!</p>
-            <p className="success-message">A confirmation email has been sent to {submittedEmail}.</p> {/* Display success message with email */}
+            <p className="success-message">A confirmation email has been sent to {submittedEmail}.</p>
           </div>
         )}
       </div>

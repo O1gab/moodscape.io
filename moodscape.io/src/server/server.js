@@ -27,6 +27,44 @@ let transporter = nodemailer.createTransport({
   },
 });
 
+const htmlContent = `
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MoodScape</title>
+  </head>
+  <body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;">
+    <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #1a1b1a;">
+      <tr>
+        <td>
+          <table align="center" cellpadding="0" cellspacing="0" width="500" style="border-collapse: collapse;">
+            <tr>
+              <td align="center" style="padding: 40px 0; background-color: #1a1b1a;">
+                <h1 style="color: #1DB954; font-family: Arial, Helvetica, sans-serif;">Welcome to MoodScape!</h1>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding: 20px; background-color: #1a1b1a;">
+                <p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #ffffff;">Thank you for signing up for our mailing list. We're excited to have you on board!</p>
+                <p style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #ffffff;">Stay tuned for updates on mood-based music recommendations, new features, and exclusive content.</p>
+                <a href="https://moodscape.io" style="display: inline-block; padding: 15px 20px; font-family: Arial, sans-serif; font-size: 16px; color: #ffffff; background-color: #1DB954; text-decoration: none; border-radius: 25px; font-weight: bold;">Visit MoodScape</a>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding: 20px; background-color: #1a1b1a;">
+                <p style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666;">© 2024 MoodScape. All rights reserved.</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+`;
+
 app.post('/subscribe', async (req, res) => {
   const { email } = req.body;
 
@@ -52,7 +90,7 @@ app.post('/subscribe', async (req, res) => {
       to: email,
       subject: 'Thanks for subscribing!',
       text: 'Thank you for signing up for MoodScape updates!',
-      html: '<b>Thank you for signing up for MoodScape updates!</b>',
+      html: htmlContent
     };
 
     await transporter.sendMail(mailOptions);
