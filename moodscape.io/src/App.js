@@ -19,20 +19,24 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div id="home" className="App">
       {/* TabBar Component */}
       <TabBar />
       {/* Hero Section */}
       <header className="hero-section">
         <h1>MoodScape</h1>
         <p>Let your emotions set the playlist.</p>
-        <a href="#features" className="cta-button">Explore Now</a>
+        <a href="#app-description" onClick={(e) => {
+          e.preventDefault(); // Prevent default anchor behavior
+          scrollToSection('app-description'); // Call the scroll function
+        }} className="cta-button">Explore Now</a> {/* Added onClick handler */}
+
 
         <img src={require('./images/app_views.png')} alt="App View" className="app-views-image" />
       </header>
 
        {/* App Description Section */}
-      <section className="app-description-section">
+      <section id="app-description" className="app-description-section">
         <div className="app-description-box">
         <h2>What is <span className="highlight">MoodScape</span>?</h2>
         <p>
@@ -46,7 +50,7 @@ function App() {
       </section>
 
        {/* Download Now Button Section */}
-      <section className="download-section">
+      <section id="download" className="download-section">
         <div className="download-container">
           <a href="#" onClick={handleDownloadClick} className="download-button">Download Now</a>
           <p className="download-description">Get the MoodScape app and start creating playlists based on your mood!</p>
@@ -88,7 +92,7 @@ function App() {
         <p>Sign up now to get notified when MoodScape is released and create your personalized playlists based on your mood.</p>
 
         {/* Email Sign Up Form */}
-        <form className="cta-form">
+        <form id="contact" className="cta-form">
           <input
             type="email"
             className="email-input"
@@ -107,5 +111,20 @@ function App() {
     </div>
   );
 }
+
+const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  const offset = 100; // Adjust this value as needed
+
+  if (section) {
+    const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth', // Smooth scrolling
+    });
+  }
+};
 
 export default App;
