@@ -6,7 +6,12 @@ const cors = require('cors');
 const admin = require('firebase-admin');
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: ['http://moodscape.io', 'https://moodscape.io'], // Allow your domain
+  methods: 'POST',
+  allowedHeaders: ['Content-Type'],
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const serviceAccount = require('./serviceAccountKey.json'); // Use the correct path
