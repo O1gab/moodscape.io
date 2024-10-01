@@ -7,14 +7,14 @@ const admin = require('firebase-admin');
 
 const app = express();
 const corsOptions = {
-  origin: ['http://moodscape.io', 'https://moodscape.io'], // Allow your domain
-  methods: 'POST',
+  origin: ['https://moodscape.io'],
+  methods: ['POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
 };
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-const serviceAccount = require('./serviceAccountKey.json'); // Use the correct path
+const serviceAccount = require('./serviceAccountKey.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
