@@ -8,7 +8,7 @@ const CTASection = () => {
     e.preventDefault();
 
     if (email) {
-      const response = await fetch('http://localhost:3001/subscribe', {
+      const response = await fetch(`'https://moodscape-io.fly.dev/subscribe'}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -20,9 +20,9 @@ const CTASection = () => {
         setSubmitted(true);
         setEmail('');
       } else {
-        const errorText = await response.text(); // Get error message
+        const errorText = await response.text();
         console.error('Server Error:', errorText);
-        alert('Something went wrong. Please try again.'); // Show alert to user
+        alert('Something went wrong. Please try again.');
     }
     }
   };

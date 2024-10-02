@@ -15,7 +15,7 @@ const Modal = ({ isOpen, onClose }) => {
     const emailToSubmit = email;
 
     try {
-      const response = await fetch('http://localhost:3001/subscribe', {
+      const response = await fetch('https://moodscape-io.fly.dev/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

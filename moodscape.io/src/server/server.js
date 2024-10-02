@@ -7,11 +7,11 @@ const admin = require('firebase-admin');
 
 const app = express();
 const corsOptions = {
-  origin: ['http://localhost:3001', 'https://moodscape.io'],
-  methods: ['GET', 'POST', 'OPTIONS']
+  origin: ['https://www.moodscape.io'],
+  optionssuccessstatus: 200
 };
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors(corsOptions));
+app.use(express.json());
 
 const serviceAccount = require('./serviceAccountKey.json');
 
@@ -69,7 +69,7 @@ const htmlContent = `
 </html>
 `;
 
-app.post('/subscribe', async (req, res) => {
+app.post('/subscribe', cors(corsOptions), async (req, res) => {
   const { email } = req.body;
 
   if (!email) {
