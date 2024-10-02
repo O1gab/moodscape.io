@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/moodscape.io/static/css/main.f8ced9e6.css",
-    "main.js": "/moodscape.io/static/js/main.ab879760.js",
-    "static/js/453.7f991bbe.chunk.js": "/moodscape.io/static/js/453.7f991bbe.chunk.js",
-    "static/media/basic_gradient.png": "/moodscape.io/static/media/basic_gradient.c27f0379debaa3908619.png",
-    "static/media/app_views.png": "/moodscape.io/static/media/app_views.f603f1396574385e5ddd.png",
-    "static/media/gradient_skyline_blinking_stars.gif": "/moodscape.io/static/media/gradient_skyline_blinking_stars.1521ab791e0878a9fae8.gif",
-    "index.html": "/moodscape.io/index.html",
-    "main.f8ced9e6.css.map": "/moodscape.io/static/css/main.f8ced9e6.css.map",
-    "main.ab879760.js.map": "/moodscape.io/static/js/main.ab879760.js.map",
-    "453.7f991bbe.chunk.js.map": "/moodscape.io/static/js/453.7f991bbe.chunk.js.map"
+    "main.css": "/static/css/main.95c1185a.css",
+    "main.js": "/static/js/main.4959b624.js",
+    "static/js/453.7f991bbe.chunk.js": "/static/js/453.7f991bbe.chunk.js",
+    "static/media/basic_gradient.png": "/static/media/basic_gradient.c27f0379debaa3908619.png",
+    "static/media/app_views.png": "/static/media/app_views.f603f1396574385e5ddd.png",
+    "static/media/gradient_skyline_blinking_stars.gif": "/static/media/gradient_skyline_blinking_stars.1521ab791e0878a9fae8.gif",
+    "index.html": "/index.html",
+    "main.95c1185a.css.map": "/static/css/main.95c1185a.css.map",
+    "main.4959b624.js.map": "/static/js/main.4959b624.js.map",
+    "453.7f991bbe.chunk.js.map": "/static/js/453.7f991bbe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8ced9e6.css",
-    "static/js/main.ab879760.js"
+    "static/css/main.95c1185a.css",
+    "static/js/main.4959b624.js"
   ]
 }
