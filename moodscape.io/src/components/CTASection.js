@@ -9,7 +9,6 @@ const CTASection = () => {
 
     
     if (email) {
-      
       const response = await fetch(`'https://moodscape-io.fly.dev/subscribe'}`, {
         method: 'POST',
         headers: {
