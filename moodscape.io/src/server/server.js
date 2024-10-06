@@ -7,7 +7,7 @@ const admin = require('firebase-admin');
 
 const app = express();
 const corsOptions = {
-  origin: ['https://moodscape.io', 'https://www.moodscape.io'],
+  origin: ['https://moodscape.io'],
   optionssuccessstatus: 200
 };
 app.use(cors(corsOptions));
@@ -99,8 +99,8 @@ app.post('/subscribe', cors(corsOptions), async (req, res) => {
 
     await transporter.sendMail(mailOptions);
     res.status(200).send('Subscription successful');
-  } catch (error) {
-    console.error(error);
+  } catch (emailError) {
+    console.error('Error sending email:', emailError);
     res.status(500).send('Error processing subscription');
   }
 });
