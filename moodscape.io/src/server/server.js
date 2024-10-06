@@ -7,7 +7,7 @@ const admin = require('firebase-admin');
 
 const app = express();
 const corsOptions = {
-  origin: ['https://www.moodscape.io'],
+  origin: ['https://moodscape.io', 'https://www.moodscape.io'],
   optionssuccessstatus: 200
 };
 app.use(cors(corsOptions));
