@@ -47,10 +47,20 @@ body {
 @media (max-width: 768px) {
   .app-views-image {
     width: 100vw;
+    height: 50vh;
     min-width: unset;
     object-position: center;
+    margin-top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
   }
-}
+
+  .app-views-image-container {
+    overflow-x: scroll; /* This container wraps the .app-views-image */
+    position: relative;
+    width: 100vw;
+  }
 
 .hero-section h1 {
   font-size: 3rem;
