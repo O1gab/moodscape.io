@@ -46,7 +46,7 @@ body {
 
 @media (max-width: 768px) {
   .app-views-image {
-    width: 100vw;
+    width: 2чы00vw;
     height: 50vh;
     min-width: unset;
     object-position: center;
@@ -61,6 +61,7 @@ body {
     position: relative;
     width: 100vw;
   }
+}
 
 .hero-section h1 {
   font-size: 3rem;
