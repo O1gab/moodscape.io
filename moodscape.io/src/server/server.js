@@ -10,7 +10,7 @@ const corsOptions = {
   origin: ['https://moodscape.io'],
   optionssuccessstatus: 200
 };
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const serviceAccount = require('./serviceAccountKey.json');
@@ -69,38 +69,33 @@ const htmlContent = `
 </html>
 `;
 
-app.post('/subscribe', cors(corsOptions), async (req, res) => {
+app.post('/subscribe', async (req, res) => {
   const { email } = req.body;
 
   if (!email) {
     return res.status(400).send('Email is required');
   }
 
-   try {
-    const snapshot = await db.collection('subscribers')
-      .where('email', '==', email)
-      .get();
+  try {
+    const snapshot = await db.collection('subscribers').where('email', '==', email).get();
 
     if (!snapshot.empty) {
-      // Email already exists, send a 409 status (Conflict)
       return res.status(409).json({ message: 'Email already exists' });
     }
 
     await db.collection('subscribers').add({ email });
 
-    // Send email confirmation
-    let mailOptions = {
+    const mailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
       subject: 'Thanks for subscribing!',
-      text: 'Thank you for signing up for MoodScape updates!',
-      html: htmlContent
+      html: 'Welcome to MoodScape!',
     };
 
     await transporter.sendMail(mailOptions);
     res.status(200).send('Subscription successful');
-  } catch (emailError) {
-    console.error('Error sending email:', emailError);
+  } catch (error) {
+    console.error('Error processing subscription:', error);
     res.status(500).send('Error processing subscription');
   }
 });
@@ -109,4 +104,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-

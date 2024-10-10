@@ -3,56 +3,44 @@ import './Modal.css';
 
 const Modal = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
+  const [status, setStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [submittedEmail, setSubmittedEmail] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [loading, setLoading] = useState(false); // Loading state
+  const [errorMessage, setErrorMessage] = useState(null);
 
   if (!isOpen) return null;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
-    const emailToSubmit = email;
+    setLoading(true);
+    setErrorMessage(null);
 
-    // Simple email format validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailToSubmit)) {
-      setErrorMessage('Please enter a valid email address.');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setErrorMessage("Please enter a valid email address.");
+      setLoading(false);
       return;
     }
 
-    setLoading(true); // Set loading to true
     try {
-      const response = await fetch('https://moodscape-io.fly.dev/subscribe', {
+      const response = await fetch('https://moodscape-io.firebaseio.com', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: emailToSubmit }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       });
 
-      if (response.status === 409) {
-        const data = await response.json();
-        setErrorMessage(data.message);
-        setSubmitted(false);
-        setLoading(false); // Set loading to false
-        return;
+      if (response.ok) {
+        setSubmitted(true);
+        setEmail("");
+      } else {
+        const errorData = await response.text();
+        setErrorMessage(`Error: ${errorData}`);
       }
-      
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      setSubmittedEmail(emailToSubmit);
-      setEmail('');
-      setErrorMessage('');
-      setSubmitted(true); 
     } catch (error) {
-      console.error('Error:', error);
-      setErrorMessage('Something went wrong. Please try again.');
+      setErrorMessage("Error subscribing. Please try again later.");
+      console.error("Error during subscription: ", error);
     } finally {
-      setLoading(false); // Always set loading to false after request
+      setLoading(false);
     }
   };
 
@@ -66,7 +54,6 @@ const Modal = ({ isOpen, onClose }) => {
         <p>MoodScape is currently under moderation and will be launched soon (mid-October). Sign up to get notified once MoodScape is available!</p>
         {!submitted ? (
           <>
-            {/* Show error message if any */}
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             
             <form className="email-form" onSubmit={handleSubmit}>
@@ -87,7 +74,7 @@ const Modal = ({ isOpen, onClose }) => {
         ) : (
           <div>
             <p className="success-message">Thanks for signing up!</p>
-            <p className="success-message">A confirmation email has been sent to {submittedEmail}.</p>
+            <p className="success-message">A confirmation email has been sent to {email}.</p>
           </div>
         )}
       </div>
