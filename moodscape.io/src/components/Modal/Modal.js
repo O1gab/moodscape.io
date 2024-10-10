@@ -23,7 +23,7 @@ const Modal = ({ isOpen, onClose }) => {
     }
 
     try {
-      const response = await fetch('https://moodscape-io.firebaseio.com', {
+      const response = await fetch('https://moodscape.io/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
