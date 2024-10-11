@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 const cors = require('cors');
@@ -7,10 +6,10 @@ const admin = require('firebase-admin');
 
 const app = express();
 const corsOptions = {
-  origin: ['https://moodscape.io', 'http://localhost:3000'],
+  origin: ['https://moodscape.io'],
   methods: ['POST', 'GET', 'OPTIONS']
 };
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 const serviceAccount = require('./serviceAccountKey.json');
@@ -100,7 +99,7 @@ app.post('/subscribe', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:${PORT}`);
 });

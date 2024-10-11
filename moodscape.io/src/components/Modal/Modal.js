@@ -23,26 +23,26 @@ const Modal = ({ isOpen, onClose }) => {
     }
 
     try {
-      const response = await fetch('https://moodscape.io/subscribe', {
+      const response = await fetch('https://moodscape-io.fly.dev/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       });
 
-      if (response.ok) {
-        setSubmitted(true);
-        setEmail("");
-      } else {
-        const errorData = await response.text();
-        setErrorMessage(`Error: ${errorData}`);
-      }
-    } catch (error) {
-      setErrorMessage("Error subscribing. Please try again later.");
-      console.error("Error during subscription: ", error);
-    } finally {
+    if (response.ok) {
+      setSubmitted(true);
+      setEmail("");
+    } else {
+      const errorData = await response.text();
+      setErrorMessage(`Error: ${errorData}`);
+    }
+  } catch (error) {
+    setErrorMessage("Error subscribing. Please try again later.");
+    console.error("Error during subscription: ", error);
+  } finally {
       setLoading(false);
     }
-  };
+};
 
   return (
     <div className={`modal-overlay ${isOpen ? 'open' : ''}`} role="dialog" aria-modal="true">
