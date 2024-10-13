@@ -34,7 +34,7 @@ body {
 }
 
 .app-views-image {
-  width: 100%;
+  width: 150%;
   height: auto;
   position: absolute;
   margin-top: 100px;
@@ -44,22 +44,23 @@ body {
   object-position: center;
 }
 
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .app-views-image {
-    width: 2чы00vw;
-    height: 50vh;
-    min-width: unset;
-    object-position: center;
-    margin-top: 0;
-    bottom: auto;
-    left: 0;
-    right: 0;
-  }
+    width: auto;
+}
 
-  .app-views-image-container {
-    overflow-x: scroll; /* This container wraps the .app-views-image */
-    position: relative;
-    width: 100vw;
+.app-views-image-container {
+  overflow-x: scroll;
+  position: relative;
+  width: 100vw;
   }
 }
 

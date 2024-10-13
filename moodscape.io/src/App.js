@@ -24,14 +24,15 @@ function App() {
       <TabBar />
       {/* Hero Section */}
       <header className="hero-section">
+        <div className="hero-content">
         <h1>MoodScape</h1>
         <p>Let your emotions set the playlist.</p>
         <a href="#app-description" onClick={(e) => {
           e.preventDefault();
           scrollToSection('app-description');
         }} className="cta-button">Explore Now</a>
-
-
+        </div>
+        
         <img src={require('./images/app_views.png')} alt="App View" className="app-views-image" />
       </header>
 
