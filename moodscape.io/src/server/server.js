@@ -9,7 +9,7 @@ const corsOptions = {
   origin: ['https://moodscape.io'],
   methods: ['POST', 'GET', 'OPTIONS']
 };
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const serviceAccount = require('./serviceAccountKey.json');
@@ -21,7 +21,7 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-// Configure your email transport
+// email transport
 let transporter = nodemailer.createTransport({
   host: 'mail.privateemail.com', port: 465, secure: true,
   auth: {
