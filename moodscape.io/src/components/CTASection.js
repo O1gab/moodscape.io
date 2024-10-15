@@ -43,7 +43,7 @@ const CTASection = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button type="submit" className="cta-button">Notify Me</button>
+          <button type="submit" className="cta-button">Submit</button>
         </form>
       ) : (
         <p>Thanks for signing up!</p>
