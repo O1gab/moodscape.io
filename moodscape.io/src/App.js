@@ -50,11 +50,23 @@ function App() {
         </div>
       </section>
 
-       {/* Download Now Button Section */}
+      {/* Download Now Button Section */}
       <section id="download" className="download-section">
         <div className="download-container">
           <a href="#" onClick={handleDownloadClick} className="download-button">Download Now</a>
           <p className="download-description">Get the MoodScape app and start creating playlists based on your mood!</p>
+        </div>
+      </section>
+
+
+      {/* How it works */}
+      <section className="how-it-works">
+        <h2>How does it work?</h2>
+        <div className="video-container">
+          <video controls>
+            <source src="./assets/videos/demo.mov" type="video/mov" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
 
