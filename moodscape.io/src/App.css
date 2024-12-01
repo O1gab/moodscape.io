@@ -103,7 +103,7 @@ body {
 .app-description-section {
   color: white;
   padding: 20px 20px;
-  margin-top: 50px;
+  margin-top: 150px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -112,7 +112,7 @@ body {
 
 .app-description-box {
   border: 2px solid #1db954;
-  padding: 20px;
+  padding: 40px;
   border-radius: 25px;
   max-width: 600px;
 }
@@ -187,7 +187,7 @@ body {
 }
 
 .how-it-works h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-size: 2.5rem;
 }
 
@@ -203,10 +203,12 @@ body {
 }
 /* Features Section */
 .features-section {
-  padding: 20px 40px;
+  padding: 20px 20px;
   font-size: 37px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .features-section h2 {
@@ -223,7 +225,9 @@ body {
   gap: 30px;
   max-width: 100%;
   max-height: 100%;
-  overflow-x: auto;
+  overflow-x: visible;
+  align-items: center;
+  justify-content: center;
   padding: 0 20px;
   margin-bottom: 100px;
 }
@@ -266,9 +270,7 @@ body {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .features {
-    flex-direction: column; /* Switch to column layout on mobile */
-    justify-content: center;
-    align-items: center;
+    padding: auto;
   }
   
   .feature {
