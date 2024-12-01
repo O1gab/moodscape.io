@@ -252,11 +252,15 @@ body {
 .feature h3 {
   font-size: 1.5rem;
   margin: 10px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .feature p {
   font-size: 1.1rem;
   margin-top: -10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
 }
 
 /* Mobile Adjustments */
