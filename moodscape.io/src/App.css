@@ -23,14 +23,15 @@ body {
   
   background-color: black;
   color: white;
-  padding: 150px 20px;
+  padding: 100px 20px;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow:scroll;
+  overflow: hidden;
+  margin-bottom: 50px;
 }
 
 .cta-button {
@@ -52,12 +53,13 @@ body {
 }
 
 .app-views-image {
-  min-width: 150%;
+  width: 120%;
+  max-width: 120%;
   height: auto;
-  margin-top: 100px;
-  bottom: -500px;
+  margin-top: 0px;
+  bottom: -300px;
   overflow-x: auto;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -71,13 +73,19 @@ body {
 
 @media (max-width: 768px) {
   .app-views-image {
-    width: auto;
+    width: 200%;
+    max-width: 200%;
+    height: auto;
+    margin-top: 0px;
+    object-position: center;
+    bottom: -300px;
 }
 
 .app-views-image-container {
-  overflow-x: scroll;
+  width: 150%;
   position: relative;
-  min-width: 150vw;
+  overflow: hidden;
+  margin-top: -90px;
   }
 }
 

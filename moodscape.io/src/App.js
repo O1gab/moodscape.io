@@ -64,7 +64,7 @@ function App() {
         <h2>How does it work?</h2>
         <div className="video-container">
           <video controls>
-            <source src={require('../public/demo.mov')} type="video/mov" />
+            <source src={require('./assets/videos/demo.mov')} type="video/mov" />
             Your browser does not support the video tag.
           </video>
         </div>
