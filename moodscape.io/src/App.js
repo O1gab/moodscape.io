@@ -53,7 +53,14 @@ function App() {
       {/* Download Now Button Section */}
       <section id="download" className="download-section">
         <div className="download-container">
-          <a href="#" onClick={handleDownloadClick} className="download-button">Download Now</a>
+          <a href="#" onClick={handleDownloadClick} className="download-button">
+            <img 
+              src={require('./images/testflight.avif')} 
+              alt="TestFlight" 
+              className="testflight-icon"
+            />
+            Download the Beta Now
+          </a>
           <p className="download-description">Get the MoodScape app and start creating playlists based on your mood!</p>
         </div>
       </section>
