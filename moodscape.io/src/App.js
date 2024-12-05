@@ -53,7 +53,12 @@ function App() {
       {/* Download Now Button Section */}
       <section id="download" className="download-section">
         <div className="download-container">
-          <a href="#" onClick={handleDownloadClick} className="download-button">
+          <a 
+            href="https://testflight.apple.com/join/V7Wc6RPA" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="download-button"
+          >
             <img 
               src={require('./images/testflight.avif')} 
               alt="TestFlight" 
