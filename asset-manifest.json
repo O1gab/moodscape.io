@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6c69e407.css",
-    "main.js": "/static/js/main.a4213bbd.js",
+    "main.js": "/static/js/main.4729a4f8.js",
     "static/js/453.7f991bbe.chunk.js": "/static/js/453.7f991bbe.chunk.js",
     "static/media/demo.mov": "/static/media/demo.8ad0326f611bf0c86fa8.mov",
     "static/media/basic_gradient.png": "/static/media/basic_gradient.c27f0379debaa3908619.png",
@@ -10,11 +10,11 @@
     "static/media/gradient_skyline_blinking_stars.gif": "/static/media/gradient_skyline_blinking_stars.1521ab791e0878a9fae8.gif",
     "index.html": "/index.html",
     "main.6c69e407.css.map": "/static/css/main.6c69e407.css.map",
-    "main.a4213bbd.js.map": "/static/js/main.a4213bbd.js.map",
+    "main.4729a4f8.js.map": "/static/js/main.4729a4f8.js.map",
     "453.7f991bbe.chunk.js.map": "/static/js/453.7f991bbe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6c69e407.css",
-    "static/js/main.a4213bbd.js"
+    "static/js/main.4729a4f8.js"
   ]
 }
