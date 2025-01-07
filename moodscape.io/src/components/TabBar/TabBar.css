@@ -1,24 +1,79 @@
-/* src/TabBar.css */
-
-.tab-bar {
+.tabBarContainer {
+  position: fixed;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   display: flex;
-  justify-content: space-around; /* Evenly space items */
-  background-color: #333; /* Background color */
-  padding: 10px 0; /* Vertical padding */
-  position: sticky; /* Keep the tab bar at the top */
-  top: 0; /* Position at the top */
-  z-index: 1000; /* Ensure it’s above other content */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.tab {
-  color: white; /* Text color */
+/* Logo */
+.logo {
+  position: absolute;
+  left: 40px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+/* Tab Bar */
+.tabBar {
+  background-color: rgba(77, 77, 77, 0.5);
+  border-radius: 30px;
+  padding: 10px 40px;
+  backdrop-filter: blur(10px);
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 100px rgba(16, 53, 28, 0.7);
+}
+
+.tabList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Tab */
+.tabList a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
   font-weight: 500;
-  text-decoration: none; /* Remove underline */
-  padding: 10px 15px; /* Padding for clickable area */
-  transition: background-color 0.3s; /* Smooth background change */
+  transition: all 0.3s ease;
+  padding: 10px 20px;
 }
 
-.tab:hover {
-  background-color: #555; /* Change background color on hover */
-  border-radius: 25px;
+.tabList a:hover {
+  color: #006e27;
+}
+
+/* Media Mobiles */
+@media (max-width: 768px) {
+  .tabBar {
+    width: 90%;
+    max-width: 500px;
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    font-size: 20px;
+    left: 20px;
+  }
+  
+  .tabList {
+    gap: 20px;
+  }
+  
+  .tabList a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 }
