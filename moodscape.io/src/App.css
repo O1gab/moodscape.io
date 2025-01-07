@@ -82,3 +82,38 @@ body {
 
 
 
+/* FEATURES SECTION */
+.features {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  top: calc(50% + 750px);
+  color: #ffffff;
+  margin: 0;
+}
+
+.features h2 {
+  font-size: 58px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.features p {
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  text-wrap: balance;
+  line-height: 1.4;
+  width: 780px;
+}
+
+.test-section {
+  position: absolute;
+  top: calc(50% + 775px);
+  left: 50%;
+  transform: translateX(-50%);
+}
