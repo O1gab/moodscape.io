@@ -110,8 +110,8 @@ body {
 
 
 
-/* FEATURES SECTION */
-.features {
+/* INFO SECTION */
+.info {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -123,14 +123,14 @@ body {
   margin: 0;
 }
 
-.features h2 {
+.info h2 {
   font-size: 58px;
   font-weight: 700;
   text-align: center;
   line-height: 1.4;
 }
 
-.features .description p {
+.info .description p {
   font-size: 32px;
   font-weight: 400;
   text-align: center;
