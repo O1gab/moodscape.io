@@ -58,10 +58,22 @@ function App() {
           <p>MoodScape has many other features!</p>
         </div>
         <div className="features-container">
-          <div className="feature-item-1"></div>
-          <div className="feature-item-2"></div>
-          <div className="feature-item-3"></div>
-          <div className="feature-item-4"></div>
+          <div className="feature-item">
+            <h3>Mood Analysis</h3>
+            <p>Advanced algorithm to analyze and match your current emotional state with music</p>
+          </div>
+          <div className="feature-item">
+            <h3>Spotify Integration</h3>
+            <p>Seamlessly connect with your Spotify account to save and share your mood-based playlists</p>
+          </div>
+          <div className="feature-item">
+            <h3>Customization</h3>
+            <p>Fine-tune your playlists by adjusting genres, energy levels, and other musical preferences</p>
+          </div>
+          <div className="feature-item">
+            <h3>Mood Tracking</h3>
+            <p>Keep track of your emotional journey through music over time</p>
+          </div>
         </div>
       </div>
 

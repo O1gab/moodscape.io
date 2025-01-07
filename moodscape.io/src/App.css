@@ -185,7 +185,7 @@ body {
 /* FEATURES SECTION */
 .features {
   position: absolute;
-  top: calc(50% + 2850px);
+  top: calc(50% + 3100px);
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
@@ -207,8 +207,14 @@ body {
 }
 
 .features .features-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.features-container .feature-item {
+  border-radius: 40px;
+
 }
