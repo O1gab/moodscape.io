@@ -80,6 +80,34 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* HOME PAGE: Mobile Adjustments */
+@media (max-width: 768px) {
+  .body {
+    overflow-x: hidden;
+  }
+
+  .home-page h1 {
+    font-size: 36px;
+    left: 15px;
+  }
+
+  .description p {
+    font-size: 20px;
+  }
+
+  .generate-button {
+    margin-top: 0px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .content-right {
+    margin-top: 500px;
+    width: 50%;
+    max-width: 350px;
+  }
+}
+
 
 
 /* FEATURES SECTION */
