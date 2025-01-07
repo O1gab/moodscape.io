@@ -9,6 +9,16 @@
     0 0 300px 20px rgba(62, 228, 121, 0.2); 
 }
 
+.playlist-generator h3 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: left;
+  margin-top: auto;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* SEARCH INPUT */
 .search-container {
   margin: 20px 0;
 }
@@ -19,8 +29,18 @@
   border-radius: 30px;
   background-color: #575757;
   font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 0 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+.search-input::placeholder {
+  color: #a0a0a0;
+  font-weight: 800;
+}
+
+/* ARTISTS CONTAINER */
 .artists-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
