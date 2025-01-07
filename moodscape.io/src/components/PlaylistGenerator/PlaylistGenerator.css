@@ -1,0 +1,45 @@
+.playlist-generator {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background-color: #07120D;
+  box-shadow: 
+    0 0 200px 100px rgba(62, 228, 121, 0.3),
+    0 0 300px 20px rgba(62, 228, 121, 0.2); 
+}
+
+.search-container {
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 80%;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #575757;
+  font-size: 16px;
+}
+
+.artists-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.artist-circle {
+  text-align: center;
+}
+
+.artist-circle img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.artist-circle p {
+  margin-top: 8px;
+  font-size: 14px;
+} 
