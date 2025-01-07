@@ -48,7 +48,21 @@ function App() {
             <div className="test"></div>
           {/* TODO: IMPLEMENT HERE THE PLAYLIST GENERATION FUNCTIONALITY */}
           <div className="test-container"></div>
-          </div>
+        </div>
+      </div>
+
+      {/* FEATURES SECTION */}
+      <div className="features">
+        <h2>There’s more than just a playlist generation.</h2>
+        <div className="description">
+          <p>MoodScape has many other features!</p>
+        </div>
+        <div className="features-container">
+          <div className="feature-item-1"></div>
+          <div className="feature-item-2"></div>
+          <div className="feature-item-3"></div>
+          <div className="feature-item-4"></div>
+        </div>
       </div>
 
 

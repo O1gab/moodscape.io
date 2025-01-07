@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000;
-  min-height: 200vh; /* Added to test scroll behavior */
+  min-height: 200vh;
 }
 
 .home-page {
@@ -76,8 +76,8 @@ body {
 .playlist_generation_view {
   max-width: 100%;
   height: auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 85px;
+  box-shadow: 0 4px 300px rgba(62, 228, 121, 0.5);
 }
 
 /* HOME PAGE: Mobile Adjustments */
@@ -128,6 +128,7 @@ body {
   font-weight: 700;
   text-align: center;
   line-height: 1.4;
+  margin-bottom: 20px;
 }
 
 .info .description p {
@@ -137,6 +138,7 @@ body {
   text-wrap: balance;
   line-height: 1.4;
 }
+
 
 
 /* TEST SECTION */
@@ -154,6 +156,7 @@ body {
   font-size: 58px;
   font-weight: 700;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .test-section .description p {
@@ -175,4 +178,37 @@ body {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+
+
+/* FEATURES SECTION */
+.features {
+  position: absolute;
+  top: calc(50% + 2850px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  width: 100%;
+}
+
+.features h2 {
+  font-size: 58px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.features .description p {
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.features .features-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
