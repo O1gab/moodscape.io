@@ -2,7 +2,7 @@
 import React from 'react';
 import TabBar from './components/TabBar/TabBar';
 import './App.css';
-
+import PlaylistGenerator from './components/PlaylistGenerator/PlaylistGenerator';
 function App() {
   return (
     <div className="App">
@@ -47,7 +47,9 @@ function App() {
             <p>Try it out now!</p>
             <div className="test"></div>
           {/* TODO: IMPLEMENT HERE THE PLAYLIST GENERATION FUNCTIONALITY */}
-          <div className="test-container"></div>
+          <div className="test-container">
+            <PlaylistGenerator />
+          </div>
         </div>
       </div>
 
