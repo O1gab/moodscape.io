@@ -1,3 +1,10 @@
+.body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tab Bar Container */
 .tabBarContainer {
   position: fixed;
   top: 7%;
@@ -55,21 +62,29 @@
   color: #006e27;
 }
 
-/* Media Mobiles */
+
+
+/* Mobile Adjustments */
 @media (max-width: 768px) {
+  .tabBarContainer {
+    top: 5%;
+    position: fixed;
+  }
+
   .tabBar {
-    width: 90%;
-    max-width: 500px;
-    padding: 15px 20px;
+    width: 55%;
+    margin: 0 auto;
+    padding: 10px 20px;
   }
   
   .logo {
-    font-size: 20px;
-    left: 20px;
+    font-size: 14px;
+    left: 10px;
   }
   
   .tabList {
-    gap: 20px;
+    gap: 7px;
+    max-width: 20px;
   }
   
   .tabList a {
