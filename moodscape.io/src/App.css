@@ -5,12 +5,13 @@
   text-align: center;
 }
 
-body {
+body, html {
   margin: 0;
   padding: 0;
   background-color: #000000;
   min-height: 200vh;
   font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 .home-page {
@@ -59,6 +60,7 @@ body {
   cursor: pointer;
   align-items: center;
   transition: all 0.3s ease;
+  box-shadow: 0 0 50px rgba(62, 228, 121, 0.5);
 }
 
 .generate-button:hover {
@@ -87,31 +89,39 @@ body {
 @media (max-width: 768px) {
   .body {
     overflow-x: hidden;
+    width: 100%;
+    height: 100%;
   }
 
-  .home-page h1 {
+  .homepage-content {
+    left: 10px;
+  }
+
+  .homepage-content h1 {
     font-size: 36px;
-    left: 15px;
+    left: 10px;
   }
 
-  .description p {
+  .homepage-content .description p {
     font-size: 20px;
   }
 
   .generate-button {
     margin-top: 0px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-size: 14px;
   }
 
   .content-right {
     margin-top: 500px;
     width: 50%;
-    max-width: 350px;
+    max-width: 450px;
   }
 
   .playlist_generation_view {
     border-radius: 40px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -146,6 +156,21 @@ body {
   line-height: 1.4;
 }
 
+/* INFO SECTION: Mobile Adjustments */
+@media (max-width: 768px) {
+  .info h2 {
+    font-size:36px;
+  }
+
+  .info .description p {
+    font-size: 20px;
+  }
+
+  .blur-circle {
+    width: 250px;
+    height: 250px;
+  }
+}
 
 
 /* TEST SECTION */
@@ -188,6 +213,16 @@ body {
   transform: translateX(-50%);
 }
 
+/* TEST SECTION: Mobile Adjustments */
+@media (max-width: 768px) {
+  .test-section h2 {
+    font-size: 36px;
+  }
+
+  .test-section .description p {
+    font-size: 20px;
+  }
+}
 
 
 /* FEATURES SECTION */
@@ -291,7 +326,7 @@ body {
 
 .download-section .description p {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: bold;
   text-align: center;
   text-wrap: balance;
 }
@@ -322,6 +357,7 @@ body {
   cursor: pointer;
   align-items: center;
   transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 }
 
 .download-button:hover {
