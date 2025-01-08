@@ -35,6 +35,7 @@ function App() {
       {/* INFO SECTION */}
       <div className="info">
         <h2>What is MoodScape?</h2>
+        <div className="blur-circle"></div>
         <div className="description">
           <p>MoodScape is a music discovery app designed to create playlists based on your current mood. Whether you're feeling happy, sad, or anything in between, MoodScape helps you connect with the right music to enhance your emotions. With our easy-to-use interface, simply select your mood and let MoodScape generate a personalized playlist that resonates with you. Experience music like never before!</p>
         </div>
@@ -85,6 +86,7 @@ function App() {
         <div className="description">
           <p>MoodScape is currently available on TestFlight. Soon we are going to launch on AppStore, so stay tuned to us!</p>
           <button className="download-button">Download Now</button>
+          <div className="blur-circle"></div>
           <div className="instructions">
             <h3> How to download?</h3>
             <p> ◯ You must have the latest version of iOS installed.<br />

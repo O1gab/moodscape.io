@@ -280,6 +280,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
+  width: 100%;
 }
 
 .download-section h2 {
@@ -293,6 +294,20 @@ body {
   font-weight: 400;
   text-align: center;
   text-wrap: balance;
+}
+
+.blur-circle {
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  background: #3EE479;
+  border-radius: 50%;
+  filter: blur(250px);
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5; /* adjust opacity as needed */
 }
 
 .download-button {
@@ -315,7 +330,11 @@ body {
 }
 
 .instructions {
-  margin-top: 100px;
+  position: absolute;
+  width: 45%;
+  margin: 100px auto 0;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 16px;
   font-weight: 400;
   text-align: center;
