@@ -25,3 +25,4 @@ yarn-error.log*
 .env
 /src/server/serviceAccountKey.json
 config.js
+service.js
