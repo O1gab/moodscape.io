@@ -6,7 +6,8 @@
   background-color: #07120D;
   box-shadow: 
     0 0 200px 100px rgba(62, 228, 121, 0.3),
-    0 0 300px 20px rgba(62, 228, 121, 0.2); 
+    0 0 300px 20px rgba(62, 228, 121, 0.2),
+    0 0 150px rgba(0, 0, 0, 0.9);
 }
 
 /* HEADER */
@@ -48,6 +49,12 @@
   margin-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 20px;
+
+  scrollbar-width: thin !important;
+  scrollbar-color: #1DB954 #07120D !important;
 }
 
 .artist-circle {
@@ -56,6 +63,30 @@
   flex-direction: column;
   align-items: center;
   width: 80px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.artist-circle.selected img, .placeholder-image.selected {
+    border: 2px solid #1DB954;
+}
+
+.artist-circle.selected::before, .placeholder-image::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(29, 185, 84, 0.3);
+    box-shadow: 
+        0 0 20px rgba(29, 185, 84, 0.3),
+        0 0 8px rgba(29, 185, 84, 0.2);
+    filter: blur(3px);
+    z-index: -100;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .artist-circle img {
@@ -64,6 +95,15 @@
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 10px #000000;
+}
+
+.placeholder-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #000000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
 }
 
 .artist-circle p {
@@ -75,4 +115,47 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: white;
-} 
+}
+
+.bottom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    margin-top: 15px;
+}
+
+/* Submit button */
+.submit-button {
+    position: fixed;
+    margin: 0 auto;
+    bottom: 5px;
+    padding: 12px 30px;
+    background-color: #1DB954;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #15833C;
+    transform: scale(1.05);
+}
+
+.selected-count {
+    position: fixed;
+    bottom: 10px;
+    left: 5%;
+    transform: translateY(50%);
+    color: #1DB954;
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+    text-align: left;
+}
+
+
