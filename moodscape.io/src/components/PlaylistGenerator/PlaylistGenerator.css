@@ -159,3 +159,48 @@
 }
 
 
+
+/* MOOD SELECTION */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.mood-selection {
+    padding: 20px;
+    text-align: center;
+}
+
+.moods-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    column-gap: 5px;
+    margin-top: 20px;
+    overflow-y: auto;
+    margin-bottom: 200px;
+}
+
+.mood-item {
+    background-color: #282828;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    width: 70%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mood-item:hover {
+    transform: scale(1.05);
+    background-color: #383838;
+}

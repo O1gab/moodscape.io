@@ -195,7 +195,71 @@ const PlaylistGenerator = () => {
             console.log('Final mood selection:', selectedMood);
             // Add your logic for what happens after mood submission
         };
-        
+
+        return (
+            <div className="mood-selection">
+                <div className="back-button" onClick={() => setShowMoodSelection(false)}>
+                    <span>←</span>
+                </div>
+                <h3>Select your current mood</h3>
+                <div className="moods-container">
+                    <div className="mood-item" onClick={() => handleMoodSelect('Happy')}>Happy</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Sad')}>Sad</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Energetic')}>Energetic</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Calm')}>Calm</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Motivated')}>Motivated</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Relaxed')}>Relaxed</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Focused')}>Focused</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Angry')}>Angry</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Fearful')}>Fearful</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Disgusted')}>Disgusted</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Surprised')}>Surprised</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Joyful')}>Joyful</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Excited')}>Excited</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Grateful')}>Grateful</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Proud')}>Proud</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Stressed')}>Stressed</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Bored')}>Bored</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Lonely')}>Lonely</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Embarrassed')}>Embarrassed</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Ashamed')}>Ashamed</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Enthusiastic')}>Enthusiastic</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Hopeful')}>Hopeful</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Elated')}>Elated</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Satisfied')}>Satisfied</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Anxious')}>Anxious</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Frustrated')}>Frustrated</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Jealous')}>Jealous</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Guilty')}>Guilty</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Envious')}>Envious</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Insecure')}>Insecure</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Overwhelmed')}>Overwhelmed</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Depressed')}>Depressed</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Hopeless')}>Hopeless</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Resentful')}>Resentful</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Bitter')}>Bitter</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Nostalgic')}>Nostalgic</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Melancholic')}>Melancholic</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Bittersweet')}>Bittersweet</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Ambivalent')}>Ambivalent</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Conflicted')}>Conflicted</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Rejected')}>Rejected</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Confused')}>Confused</div>
+                    <div className="mood-item" onClick={() => handleMoodSelect('Tired')}>Tired</div>
+
+                </div>
+                <div className="bottom-container">
+                    <div className="selected-count">
+                        Selected: {selectedMood || 'No mood selected'}
+                    </div>
+                    <button className="submit-button" onClick={handleMoodSubmit}>
+                        Submit
+                    </button>
+                </div>
+            </div>
+        );
+    };
+
     return (
         <div className="playlist-generator">
             {!showMoodSelection ? (
