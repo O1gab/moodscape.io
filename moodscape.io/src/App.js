@@ -79,6 +79,21 @@ function App() {
         </div>
       </div>
 
+      {/* DOWNLOAD SECTION */}
+      <div className="download-section">
+        <h2>Download MoodScape</h2>
+        <div className="description">
+          <p>MoodScape is currently available on TestFlight. Soon we are going to launch on AppStore, so stay tuned to us!</p>
+          <button className="download-button">Download Now</button>
+          <div className="instructions">
+            <h3> How to download?</h3>
+            <p> ◯ You must have the latest version of iOS installed.<br />
+                ◯ Install TestFlight from the App Store.<br />
+                ◯ Search for MoodScape in the TestFlight app or click on the button below.<br />
+                ◯ Install the app and start using MoodScape!</p>
+          </div>
+        </div>
+      </div>
 
     </div>
   );

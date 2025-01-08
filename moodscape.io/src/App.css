@@ -271,3 +271,68 @@ body {
 
 
 /* DOWNLOAD SECTION */
+.download-section {
+  position: absolute;
+  top: calc(50% + 4500px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+}
+
+.download-section h2 {
+  font-size: 58px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.download-section .description p {
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.download-button {
+  margin-top: 50px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  background-color: #1DCB5A;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #1ed760;
+  transform: scale(1.05);
+}
+
+.instructions {
+  margin-top: 100px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  text-wrap: balance;
+  background-color: #1A1A1A;
+  border-radius: 30px;
+}
+
+.instructions h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.instructions p {
+  font-size: 22px !important;
+  font-weight: 400;
+  text-align: left !important;
+  margin-left: 25px;
+  margin-right: 20px;
+  text-wrap: balance;
+  line-height: 1.4;
+}
