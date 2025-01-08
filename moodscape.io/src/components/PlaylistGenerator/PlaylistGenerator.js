@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './PlaylistGenerator.css';
 import config from '../../config';
+import { generatePlaylist } from '../../services/service';
 
 const PlaylistGenerator = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -9,6 +10,8 @@ const PlaylistGenerator = () => {
     const [accessToken, setAccessToken] = useState('');
     const [selectedArtistsData, setSelectedArtistsData] = useState(new Map());
     const [showMoodSelection, setShowMoodSelection] = useState(false);
+    const [selectedMoods, setSelectedMoods] = useState([]);
+    const [generatedPlaylist, setGeneratedPlaylist] = useState(null);
 
     const SPOTIFY_CLIENT_ID = config.SPOTIFY_CLIENT_ID;
     const SPOTIFY_CLIENT_SECRET = config.SPOTIFY_CLIENT_SECRET;
@@ -179,21 +182,41 @@ const PlaylistGenerator = () => {
         setArtists([]);
     };
 
+
+
     const MoodSelection = () => {
         const [selectedMood, setSelectedMood] = useState(null);
-
+        
         const handleMoodSelect = (mood) => {
-            setSelectedMood(mood);
             console.log('Selected mood:', mood);
+            setSelectedMoods(prevSelectedMoods => {
+                if (prevSelectedMoods.includes(mood)) {
+                    return prevSelectedMoods.filter(m => m !== mood);
+                } else {
+                    return [...prevSelectedMoods, mood];
+                }
+            });
         };
 
-        const handleMoodSubmit = () => {
-            if (!selectedMood) {
+        const handleMoodSubmit = async () => {
+            if (selectedMoods.length === 0) {
                 alert('Please select a mood.');
                 return;
             }
-            console.log('Final mood selection:', selectedMood);
-            // Add your logic for what happens after mood submission
+            
+            try {
+                const selectedArtistNames = Array.from(selectedArtistsData.values())
+                    .map(artist => artist.name);
+                console.log('Selected artists:', selectedArtistNames);
+                console.log('Selected moods:', selectedMoods);
+                const playlist = await generatePlaylist(selectedMoods, selectedArtistNames);
+                console.log('Generated playlist:', playlist);
+                setGeneratedPlaylist(playlist);
+            } catch (error) {
+                console.error('Failed to generate playlist:', error);
+                console.log('Error details:', error.message);
+                alert('Failed to generate playlist. Please try again.');
+            }
         };
 
         return (
@@ -246,11 +269,10 @@ const PlaylistGenerator = () => {
                     <div className="mood-item" onClick={() => handleMoodSelect('Rejected')}>Rejected</div>
                     <div className="mood-item" onClick={() => handleMoodSelect('Confused')}>Confused</div>
                     <div className="mood-item" onClick={() => handleMoodSelect('Tired')}>Tired</div>
-
                 </div>
                 <div className="bottom-container">
                     <div className="selected-count">
-                        Selected: {selectedMood || 'No mood selected'}
+                        Selected: {selectedMoods || 'No mood selected'}
                     </div>
                     <button className="submit-button" onClick={handleMoodSubmit}>
                         Submit
@@ -259,6 +281,76 @@ const PlaylistGenerator = () => {
             </div>
         );
     };
+
+    const PlaylistDisplay = ({ playlist, accessToken, onBack }) => {
+    const [tracksWithImages, setTracksWithImages] = useState([]);
+
+    useEffect(() => {
+        const fetchTrackDetails = async () => {
+            const enrichedTracks = await Promise.all(
+                playlist.playlist.map(async (track) => {
+                    try {
+                        // Search for the track on Spotify
+                        const searchResponse = await fetch(
+                            `https://api.spotify.com/v1/search?q=${encodeURIComponent(
+                                `track:${track.song} artist:${track.artist}`
+                            )}&type=track&limit=1`,
+                            {
+                                headers: {
+                                    'Authorization': `Bearer ${accessToken}`,
+                                }
+                            }
+                        );
+
+                        const searchData = await searchResponse.json();
+                        const spotifyTrack = searchData.tracks?.items[0];
+
+                        return {
+                            ...track,
+                            albumImage: spotifyTrack?.album?.images[0]?.url || null,
+                            spotifyId: spotifyTrack?.id || null
+                        };
+                    } catch (error) {
+                        console.error('Error fetching track details:', error);
+                        return track;
+                    }
+                })
+            );
+
+            setTracksWithImages(enrichedTracks);
+        };
+
+        if (playlist && accessToken) {
+            fetchTrackDetails();
+        }
+    }, [playlist, accessToken]);
+
+    return (
+        <div className="playlist-display">
+            <div className="back-button" onClick={onBack}>
+                <span>←</span>
+            </div>
+            <h3>Your Generated Playlist</h3>
+            <div className="tracks-container">
+                {tracksWithImages.map((track, index) => (
+                    <div key={index} className="track-item">
+                        <div className="track-image">
+                            {track.albumImage ? (
+                                <img src={track.albumImage} alt={`${track.song} album art`} />
+                            ) : (
+                                <div className="placeholder-image"></div>
+                            )}
+                        </div>
+                        <div className="track-info">
+                            <div className="track-name">{track.song}</div>
+                            <div className="track-artist">{track.artist}</div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
 
     return (
         <div className="playlist-generator">
@@ -299,6 +391,12 @@ const PlaylistGenerator = () => {
                         </button>
                     </div>
                 </>
+            ) : generatedPlaylist ? (
+                <PlaylistDisplay 
+                    playlist={generatedPlaylist}
+                    accessToken={accessToken}
+                    onBack={() => setGeneratedPlaylist(null)}
+                />
             ) : (
                 <MoodSelection />
             )}
