@@ -1,0 +1,24 @@
+.faq-item {
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgb(18, 18, 18);
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1DCB5A;
+}
+
+.faq-answer {
+  padding: 20px;
+  font-size: 1.1rem;
+}
