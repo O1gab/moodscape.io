@@ -269,7 +269,7 @@
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    opacity: 0; /* Start invisible */
+    opacity: 0;
     animation: fadeInUp 0.5s ease forwards;
 }
 
@@ -309,6 +309,17 @@
 .track-item:nth-child(34) { animation-delay: 3.4s; }
 .track-item:nth-child(35) { animation-delay: 3.5s; }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .track-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -344,7 +355,7 @@
 
 .placeholder-image {
   width: 100%;
-  height: 100%;    
+  height: 100%;
   background: #404040;
   align-items: center;
   justify-content: center;
