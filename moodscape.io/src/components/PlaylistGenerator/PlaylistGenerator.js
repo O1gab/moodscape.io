@@ -283,74 +283,96 @@ const PlaylistGenerator = () => {
     };
 
     const PlaylistDisplay = ({ playlist, accessToken, onBack }) => {
-    const [tracksWithImages, setTracksWithImages] = useState([]);
+        const [tracksWithImages, setTracksWithImages] = useState([]);
+        const [showBlur, setShowBlur] = useState(false);
 
-    useEffect(() => {
-        const fetchTrackDetails = async () => {
-            const enrichedTracks = await Promise.all(
-                playlist.playlist.map(async (track) => {
-                    try {
-                        // Search for the track on Spotify
-                        const searchResponse = await fetch(
-                            `https://api.spotify.com/v1/search?q=${encodeURIComponent(
-                                `track:${track.song} artist:${track.artist}`
-                            )}&type=track&limit=1`,
-                            {
-                                headers: {
-                                    'Authorization': `Bearer ${accessToken}`,
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                setShowBlur(true);
+            }, 1000);
+
+            return () => clearTimeout(timer);
+        }, []);
+
+        useEffect(() => {
+            const fetchTrackDetails = async () => {
+                const enrichedTracks = await Promise.all(
+                    playlist.playlist.map(async (track) => {
+                        try {
+                            // Search for the track on Spotify
+                            const searchResponse = await fetch(
+                                `https://api.spotify.com/v1/search?q=${encodeURIComponent(
+                                    `track:${track.song} artist:${track.artist}`
+                                )}&type=track&limit=1`,
+                                {
+                                    headers: {
+                                        'Authorization': `Bearer ${accessToken}`,
+                                    }
                                 }
-                            }
-                        );
+                            );
 
-                        const searchData = await searchResponse.json();
-                        const spotifyTrack = searchData.tracks?.items[0];
+                            const searchData = await searchResponse.json();
+                            const spotifyTrack = searchData.tracks?.items[0];
 
-                        return {
-                            ...track,
-                            albumImage: spotifyTrack?.album?.images[0]?.url || null,
-                            spotifyId: spotifyTrack?.id || null
-                        };
-                    } catch (error) {
-                        console.error('Error fetching track details:', error);
-                        return track;
-                    }
-                })
-            );
+                            return {
+                                ...track,
+                                albumImage: spotifyTrack?.album?.images[0]?.url || null,
+                                spotifyId: spotifyTrack?.id || null
+                            };
+                        } catch (error) {
+                            console.error('Error fetching track details:', error);
+                            return track;
+                        }
+                    })
+                );
 
-            setTracksWithImages(enrichedTracks);
-        };
+                setTracksWithImages(enrichedTracks);
+            };
 
-        if (playlist && accessToken) {
-            fetchTrackDetails();
-        }
-    }, [playlist, accessToken]);
+            if (playlist && accessToken) {
+                fetchTrackDetails();
+            }
+        }, [playlist, accessToken]);
 
-    return (
-        <div className="playlist-display">
-            <div className="back-button" onClick={onBack}>
-                <span>←</span>
-            </div>
-            <h3>Your Generated Playlist</h3>
-            <div className="tracks-container">
-                {tracksWithImages.map((track, index) => (
-                    <div key={index} className="track-item">
-                        <div className="track-image">
-                            {track.albumImage ? (
-                                <img src={track.albumImage} alt={`${track.song} album art`} />
-                            ) : (
-                                <div className="placeholder-image"></div>
-                            )}
-                        </div>
-                        <div className="track-info">
-                            <div className="track-name">{track.song}</div>
-                            <div className="track-artist">{track.artist}</div>
+        return (
+            <div className="playlist-display">
+                <div className={`playlist-content ${showBlur ? 'playlist-blur' : ''}`}>
+                    <div className="back-button" onClick={onBack}>
+                        <span>←</span>
+                    </div>
+                    <h3>Your Generated Playlist</h3>
+                    <div className="tracks-container">
+                        {tracksWithImages.map((track, index) => (
+                            <div key={index} className="track-item">
+                                <div className="track-image">
+                                    {track.albumImage ? (
+                                        <img src={track.albumImage} alt={`${track.song} album art`} />
+                                    ) : (
+                                        <div className="placeholder-image"></div>
+                                    )}
+                                </div>
+                                <div className="track-info">
+                                    <div className="track-name">{track.song}</div>
+                                    <div className="track-artist">{track.artist}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                {showBlur && (
+                    <div className="download-overlay">
+                        <div className="download-content">
+                            <h2>Download Moodscape</h2>
+                            <p>Download Moodscape to get your playlist on Spotify.</p>
+                            <button className="download-button" onClick={() => window.open('https://moodscape.io', '_blank')}>
+                                Download
+                            </button>
                         </div>
                     </div>
-                ))}
+                )}
             </div>
-        </div>
-    );
-};
+        );
+    };
 
     return (
         <div className="playlist-generator">

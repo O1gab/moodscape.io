@@ -360,3 +360,101 @@
   align-items: center;
   justify-content: center;
 }
+
+.playlist-display {
+    position: relative;
+}
+
+.playlist-blur {
+  animation: blurEffect 2s ease forwards;
+  animation-delay: 5s;
+}
+
+
+.playlist-blur .tracks-container,
+.playlist-blur .back-button,
+.playlist-blur h3 {
+  animation: blurEffect 2s ease forwards;
+  animation-delay: 6s;
+}
+
+.download-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000 !important;
+  opacity: 0;
+  animation: fadeInOverlay 1s ease forwards;
+  animation-delay: 5s;
+}
+
+.download-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 1rem;
+}
+
+.download-overlay h2 {
+  color: white;
+  font-size: 42px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInLabel 1s ease forwards;
+  animation-delay: 5s;
+}
+
+.download-overlay p {
+  font-size: 28px !important;
+  color: white;
+  font-weight: bold !important;
+  opacity: 0;
+  animation: fadeInLabel 1s ease forwards;
+  animation-delay: 5.5s;
+}
+
+.download-overlay .download-button {
+  margin-top: 0px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.playlist-blur {
+  position: relative;
+}
+
+@keyframes blurEffect {
+  from {
+    filter: blur(0);
+  }
+  to {
+    filter: blur(8px);
+  }
+}
+
+@keyframes fadeInLabel {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
