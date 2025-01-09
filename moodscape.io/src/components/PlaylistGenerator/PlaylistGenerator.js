@@ -364,8 +364,8 @@ const PlaylistGenerator = () => {
                         <div className="download-content">
                             <h2>Download Moodscape</h2>
                             <p>Download Moodscape to get your playlist on Spotify.</p>
-                            <button className="download-button" onClick={() => window.open('https://moodscape.io', '_blank')}>
-                                Download
+                            <button className="download-button" onClick={() => window.open('https://testflight.apple.com/join/V7Wc6RPA', '_blank')}>
+                                Download Now
                             </button>
                         </div>
                     </div>

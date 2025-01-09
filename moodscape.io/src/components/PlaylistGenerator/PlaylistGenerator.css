@@ -421,8 +421,7 @@
   animation-delay: 5.5s;
 }
 
-.download-overlay .download-button {
-  margin-top: 0px;
+.download-content .download-button {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
