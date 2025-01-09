@@ -271,9 +271,6 @@ const PlaylistGenerator = () => {
                     <div className="mood-item" onClick={() => handleMoodSelect('Tired')}>Tired</div>
                 </div>
                 <div className="bottom-container">
-                    <div className="selected-count">
-                        Selected: {selectedMoods || 'No mood selected'}
-                    </div>
                     <button className="submit-button" onClick={handleMoodSubmit}>
                         Submit
                     </button>
@@ -405,9 +402,6 @@ const PlaylistGenerator = () => {
                         ))}
                     </div>
                     <div className="bottom-container">
-                        <div className="selected-count">
-                            Selected: {selectedArtists.size} artists
-                        </div>
                         <button className="submit-button" onClick={handleSubmit}>
                             Submit
                         </button>
