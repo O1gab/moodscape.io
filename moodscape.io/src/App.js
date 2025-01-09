@@ -111,22 +111,26 @@ function App() {
             </button>
             {openAnswer === 1 && (
               <div className={`faq-answer ${openAnswer === 1 ? 'open' : ''}`}>
-                <p>Since MoodScape utilizes the Spotify API, the app is currently undergoing moderation by Spotify. We anticipate launching around mid-October. Thank you for your patience!</p>
+                <p>MoodScape is currently in the testing phase. Once we've perfected the app, you’ll be able to find it on the App Store. If you download the beta version, you’ll be notified by the App Store as soon as MoodScape is officially available.</p>
               </div>
             )}
           </div>
-
+          
           <div className="faq-item">
             <button 
               className="faq-question" 
               onClick={() => toggleAnswer(2)} 
               aria-expanded={openAnswer === 2}
             >
-              How does MoodScape create playlists?
+              How to download the beta from TestFlight?
             </button>
             {openAnswer === 2 && (
-              <div className="faq-answer">
-                <p>MoodScape employs an AI-driven algorithm to create personalized playlists tailored to your selected emotions. Once your playlist is generated, it will be available for you to view on Spotify.</p>
+              <div className={`faq-answer ${openAnswer === 2 ? 'open' : ''}`}>
+                <p>1. Download the TestFlight app from the App Store, if you don’t already have it.
+                <br /><br />2. Ensure you have the latest version of iOS installed on your iPhone.
+                <br /><br />3. Tap on the Download button above.
+                <br /><br />4. Open TestFlight and accept the invitation to join the MoodScape beta testing program.
+                <br /><br />5. Once accepted, you’ll be able to install the beta version of MoodScape directly through TestFlight.</p>
               </div>
             )}
           </div>
@@ -137,11 +141,11 @@ function App() {
               onClick={() => toggleAnswer(3)} 
               aria-expanded={openAnswer === 3}
             >
-              Is MoodScape free?
+              How does MoodScape create playlists?
             </button>
             {openAnswer === 3 && (
               <div className="faq-answer">
-                <p>Yes, you can use MoodScape and generate as many playlists as you want absolutely for free.</p>
+                <p>MoodScape employs an AI-driven algorithm to create personalized playlists tailored to your selected emotions. Once your playlist is generated, it will be available for you to view and access it on Spotify.</p>
               </div>
             )}
           </div>
@@ -152,9 +156,24 @@ function App() {
               onClick={() => toggleAnswer(4)} 
               aria-expanded={openAnswer === 4}
             >
-              Do I need a Spotify account to use the app?
+              Is MoodScape free?
             </button>
             {openAnswer === 4 && (
+              <div className="faq-answer">
+                <p>Yes, you can use MoodScape and generate as many playlists as you want absolutely for free.</p>
+              </div>
+            )}
+          </div>
+
+          <div className="faq-item">
+            <button 
+              className="faq-question" 
+              onClick={() => toggleAnswer(5)} 
+              aria-expanded={openAnswer === 5}
+            >
+              Do I need a Spotify account to use the app?
+            </button>
+            {openAnswer === 5 && (
               <div className="faq-answer">
                 <p>Yes.</p>
               </div>
