@@ -422,6 +422,7 @@
 }
 
 .download-content .download-button {
+  margin-top: 0px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
