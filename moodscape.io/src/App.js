@@ -68,20 +68,20 @@ function App() {
         </div>
         <div className="features-container">
           <div className="feature-item">
-            <h3>Mood Analysis</h3>
-            <p>Advanced algorithm to analyze and match your current emotional state with music</p>
-          </div>
-          <div className="feature-item">
-            <h3>Spotify Integration</h3>
-            <p>Seamlessly connect with your Spotify account to save and share your mood-based playlists</p>
-          </div>
-          <div className="feature-item">
-            <h3>Customization</h3>
-            <p>Fine-tune your playlists by adjusting genres, energy levels, and other musical preferences</p>
+            <h3>Connect with Friends</h3>
+            <p>Add your friends on MoodScape to see what they’re listening to, recommend songs, and share your mood. Discover new music through the people you care about.</p>
           </div>
           <div className="feature-item">
             <h3>Mood Tracking</h3>
-            <p>Keep track of your emotional journey through music over time</p>
+            <p>Track your emotional journey over time by connecting your mood with music. Reflect on how your playlists evolve as your emotions do.</p>
+          </div>
+          <div className="feature-item">
+            <h3>Discover New Artists and Music</h3>
+            <p>MoodScape helps you step out of your music bubble by introducing you to fresh artists and tracks based on your unique mood and recommendations.</p>
+          </div>
+          <div className="feature-item">
+            <h3>Personalized Playlists</h3>
+            <p>Get curated music recommendations tailored to your current mood. Whether you're feeling happy, calm, or nostalgic, we’ve got the perfect playlist for you.</p>
           </div>
         </div>
       </div>

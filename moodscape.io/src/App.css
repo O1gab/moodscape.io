@@ -278,18 +278,18 @@ body, html {
 .feature-item:hover {
   transform: translateY(-5px);
   box-shadow: 
-    0 0 40px rgba(62, 228, 121, 0.3),
-    0 0 80px rgba(62, 228, 121, 0.2);
+    0 0 80px rgba(62, 228, 121, 0.3),
+    0 0 120px rgba(62, 228, 121, 0.2);
 }
 
 .feature-item h3 {
   color: #1DB954;
-  font-size: 24px;
+  font-size: 1.7rem;
   margin-bottom: 15px;
 }
 
 .feature-item p {
-  font-size: 16px;
+  font-size: 1.1rem;
   line-height: 1.6;
   color: #ffffff;
   opacity: 0.9;
