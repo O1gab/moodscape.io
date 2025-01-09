@@ -398,7 +398,7 @@ body, html {
   margin: 50px 0;
   padding: 10px;
   border-radius: 20px;
-  box-shadow: 0 10px 50px rgba(29, 203, 90, 0.2);
+  box-shadow: 0 10px 50px rgba(62, 228, 121, 0.3);
 }
 
 .faq-question {
@@ -421,10 +421,12 @@ body, html {
   color: #1DCB5A;
 }
 
+
+
 /* CONTACT SECTION */
 .contact-section {
   position: absolute;
-  top: calc(50% + 7500px);
+  top: calc(50% + 6900px);
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
@@ -453,4 +455,23 @@ body, html {
   font-weight: 400;
   text-align: center;
   text-wrap: balance;
+}
+
+.contact-section a {
+  color: #1DCB5A;
+}
+
+
+
+/* FOOTER */
+.footer {
+  position: absolute;
+  top: calc(50% + 7500px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
 }

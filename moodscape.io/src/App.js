@@ -164,6 +164,20 @@ function App() {
         </div>
       </div>
 
+      {/* CONTACT SECTION */}
+      <div className="contact-section">
+        <h2>Contact Us</h2>
+        <div className="blur-circle"></div>
+        <div className="description">
+          <p>If you have any questions, offers, or feedback, please feel free to contact us at <a href="mailto:contact@moodscape.io">contact@moodscape.io</a>.</p>
+        </div>
+      </div>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <p>© 2025 MoodScape. All rights reserved.</p>
+      </footer>
+
     </div>
   );
 }
