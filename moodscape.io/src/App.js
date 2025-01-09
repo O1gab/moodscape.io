@@ -54,7 +54,6 @@ function App() {
         <div className="description">
             <p>Try it out now!</p>
             <div className="test"></div>
-          {/* TODO: IMPLEMENT HERE THE PLAYLIST GENERATION FUNCTIONALITY */}
           <div className="test-container">
             <PlaylistGenerator />
           </div>
