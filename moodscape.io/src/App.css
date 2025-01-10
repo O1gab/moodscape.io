@@ -41,7 +41,6 @@ h2 {
 
 /* ==================== HOME SECTION ==================== */
 .home-page {
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: #ffffff;
@@ -56,6 +55,8 @@ h2 {
 .content-left h1 {
   font-size: 58px;
   font-weight: bold;
+  opacity: 0;
+  animation: slideDown 1s ease forwards;
 }
 
 .content-left .description {
@@ -67,6 +68,9 @@ h2 {
   font-size: 32px;
   font-weight: normal;
   text-align: left;
+  opacity: 0;
+  animation: slideDown 1s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .content-left .generate-button {
@@ -81,6 +85,9 @@ h2 {
   align-items: center;
   transition: all 0.3s ease;
   box-shadow: 0 0 50px rgba(62, 228, 121, 0.5);
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.6s;
 }
 
 .generate-button:hover {
@@ -88,7 +95,6 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Video on the right side */
 .content-right {
   margin-top: 7%;
   margin-right: 0%;
@@ -107,10 +113,6 @@ h2 {
 
 /* ==================== INFO SECTION ==================== */
 .info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   position: relative;
 
@@ -138,8 +140,15 @@ h2 {
   font-size: 58px;
   font-weight: 700;
   line-height: 1.4;
-  margin-bottom: 20px;
-  width: 80%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 1s ease;
+}
+
+.info h2.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .info .description p {
@@ -148,12 +157,29 @@ h2 {
   line-height: 1.4;
   width: 80%;
   margin: 0 auto;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease;
+}
+
+.info .description p.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .info h2,
 .info .description {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .info h2 {
+    font-size: 36px;
+  }
+  .info .description p {
+    font-size: 24px;
+  }
 }
 
 
@@ -268,6 +294,7 @@ h2 {
 .download-section h2 {
   font-size: 58px;
   font-weight: bold;
+  text-align: center;
 }
 
 .download-section .description p {
@@ -421,3 +448,48 @@ h2 {
   color: #666;
   font-size: 14px;
 }
+
+
+/* ANIMATIONS */
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
