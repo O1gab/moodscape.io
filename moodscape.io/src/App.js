@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import TabBar from './components/TabBar/TabBar';
 import './App.css';
 import PlaylistGenerator from './components/PlaylistGenerator/PlaylistGenerator';
+import ScrollAnimation from './components/ScrollAnimation';
 
 function App() {
   const [openAnswer, setOpenAnswer] = useState(null);
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollAnimation />
       <TabBar />
 
       {/* HOME PAGE */}
