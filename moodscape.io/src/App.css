@@ -109,6 +109,40 @@ h2 {
   box-shadow: 0 4px 300px rgba(62, 228, 121, 0.5);
 }
 
+/* HOME PAGE MEDIA ADJUSTMENTS */
+@media (max-width: 768px) {
+  .home-page {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .content-left {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100vw;
+    text-align: center;
+  }
+
+  .content-left h1 {
+    text-align: center;
+  }
+
+  .content-left .description p {
+    text-align: center;
+  }
+
+  .content-right {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .playlist_generation_view {
+    width: 100%;
+    border-radius: 40px;
+  }
+}
+
 
 
 /* ==================== INFO SECTION ==================== */
@@ -231,13 +265,12 @@ h2 {
 .features {
   width: 100%;
   color: #ffffff;
-  padding: 40px;
+  padding: 20px;
 }
 
 .features h2 {
   font-size: 58px;
   font-weight: 700;
-  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -261,7 +294,7 @@ h2 {
 .feature-item {
   border-radius: 40px;
   background: rgba(7, 18, 13, 0.8);
-  padding: 30px;
+  padding: 20px;
   text-align: left;
   box-shadow: 
     0 0 30px rgba(62, 228, 121, 0.2),
@@ -278,17 +311,28 @@ h2 {
 
 .feature-item h3 {
   color: #1DB954;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   margin-bottom: 15px;
 }
 
 .feature-item p {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   line-height: 1.6;
   color: #ffffff;
   opacity: 0.9;
 }
 
+@media (max-width: 768px) {
+  .features-container {
+    grid-template-columns: repeat(1, 1.5fr);
+  }
+  .feature-item {
+    text-align: center;
+    box-shadow: 
+    0 0 70px rgba(62, 228, 121, 0.3),
+    0 0 100px rgba(62, 228, 121, 0.1);
+  }
+}
 
 
 /* ==================== DOWNLOAD SECTION ==================== */
