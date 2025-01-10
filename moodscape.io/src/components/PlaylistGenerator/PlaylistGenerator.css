@@ -1,5 +1,4 @@
 .playlist-generator {
-  padding: 20px;
   width: 100%;
   height: 100%;
   border-radius: 40px;
@@ -15,9 +14,8 @@
   font-size: 28px;
   font-weight: 700;
   text-align: left;
-  margin-top: auto;
   margin-left: 20px;
-  margin-bottom: 20px;
+  padding-left: 10px;
 }
 
 /* SEARCH INPUT */
@@ -44,28 +42,30 @@
 /* ARTISTS CONTAINER */
 .artists-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 15px;
-  margin-top: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
-  max-height: 400px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  margin: 30px 20px 0 20px;
+  padding: 10px;
+  height: calc(100% - 200px);
   overflow-y: auto;
-  padding-right: 5px;
-
-  scrollbar-width: thin !important;
-  scrollbar-color: #1DB954 #07120D !important;
+  overflow-x: hidden;
+  justify-items: center;
+  align-items: start;
+  box-sizing: border-box;
 }
 
 .artist-circle {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80px;
+  width: 100px;
+  min-height: 120px;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0px;
 }
 
 .artist-circle.selected img, .placeholder-image.selected {
@@ -95,6 +95,7 @@
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 10px #000000;
+  flex-shrink: 0;
 }
 
 .placeholder-image {
@@ -115,6 +116,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: white;
+  padding: 0 5px;
+  box-sizing: border-box;
 }
 
 .bottom-container {
@@ -123,11 +126,11 @@
     justify-content: center;
     padding: 15px 20px;
     margin-top: 15px;
+    height: 100%;
 }
 
 /* SUBMIT BUTTON */
 .submit-button {
-    position: absolute;
     margin: 0 auto;
     bottom: 5px;
     padding: 12px 30px;
@@ -162,16 +165,10 @@
 
 /* MOOD SELECTION */
 .back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
     cursor: pointer;
     font-size: 24px;
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.3s ease;
 }
 
@@ -182,16 +179,14 @@
 
 .moods-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    column-gap: 5px;
-    margin-top: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 15px;
+    height: calc(100% - 200px);
     overflow-y: auto !important;
-    margin-bottom: 15px;
-    max-height: 470px;
     justify-content: center;
-    align-items: center;
-    padding-right: 5px;
+    align-items: start;
+    box-sizing: border-box;
 
     scrollbar-width: thin !important;
     scrollbar-color: #1DB954 #07120D !important;
@@ -199,14 +194,19 @@
 
 .mood-item {
     background-color: #282828;
-    padding: 10px;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 70%;
+    width: 100%;
+    padding: 12px 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .mood-item:hover {
@@ -461,44 +461,51 @@
 
 @media screen and (max-width: 768px) {
   .playlist-generator {
-    padding: 10px;
-    max-width: 100%;
+    padding: 20px 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .playlist-generator h3 {
+    font-size: 22px;
+    padding-left: 0px;
   }
 
   .search-input {
+    height: 30px;
     width: 90%;
     font-size: 16px;
     padding: 8px;
   }
 
   .artists-container {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .artist-circle {
+    width: 85px;
+    min-height: 105px;
+  }
+
+  .artist-circle img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .artist-circle p {
+    font-size: 12px !important;
+  }
+
+  .moods-container {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     gap: 10px;
     padding: 10px;
   }
 
-  .artist-circle {
-    width: 80px;
-    height: 80px;
-  }
-
-  .artist-circle img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .artist-circle p {
-    font-size: 12px;
-  }
-
-  .moods-container {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 8px;
-    padding: 10px;
-  }
-
   .mood-item {
-    padding: 8px;
+    padding: 8px 12px;
     font-size: 14px;
   }
 
@@ -542,4 +549,16 @@
     font-size: 24px;
     padding: 8px;
   }
+}
+
+@media screen and (max-width: 480px) {
+    .moods-container {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 8px;
+    }
+
+    .mood-item {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
 }
