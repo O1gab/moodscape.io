@@ -322,6 +322,7 @@ h2 {
   opacity: 0.9;
 }
 
+/* FEATURES MEDIA ADJUSTMENTS */
 @media (max-width: 768px) {
   .features-container {
     grid-template-columns: repeat(1, 1.5fr);
