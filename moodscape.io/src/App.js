@@ -17,7 +17,7 @@ function App() {
 
       {/* HOME PAGE */}
       <div className="home-page">
-        <div className="homepage-content">
+        <div className="content-left">
           <h1>Let your emotions<br />set the playlist.
             <div className="description">
               <p>Create playlists on Spotify that reflect<br />your current mood.</p>
@@ -41,8 +41,8 @@ function App() {
 
       {/* INFO SECTION */}
       <div className="info">
-        <h2>What is MoodScape?</h2>
         <div className="blur-circle"></div>
+        <h2>What is MoodScape?</h2>
         <div className="description">
           <p>MoodScape is a music discovery app designed to create playlists based on your current mood. Whether you're feeling happy, sad, or anything in between, MoodScape helps you connect with the right music to enhance your emotions. With our easy-to-use interface, simply select your mood and let MoodScape generate a personalized playlist that resonates with you. Experience music like never before!</p>
         </div>
@@ -88,11 +88,13 @@ function App() {
 
       {/* DOWNLOAD SECTION */}
       <div className="download-section">
+        <div className="blur-circle"></div>
         <h2>Download MoodScape</h2>
         <div className="description">
           <p>MoodScape is currently available on TestFlight. Soon we are going to launch on AppStore, so stay tuned to us!</p>
-          <button className="download-button">Download Now</button>
-          <div className="blur-circle"></div>
+          <div className="download-button-container">
+            <button className="download-button">Download Now</button>
+          </div>
         </div>
       </div>
 
@@ -184,8 +186,8 @@ function App() {
 
       {/* CONTACT SECTION */}
       <div className="contact-section">
-        <h2>Contact Us</h2>
         <div className="blur-circle"></div>
+        <h2>Contact Us</h2>
         <div className="description">
           <p>If you have any questions, offers, or feedback, please feel free to contact us at <a href="mailto:contact@moodscape.io">contact@moodscape.io</a>.</p>
         </div>
