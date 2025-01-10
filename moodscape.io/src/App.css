@@ -40,6 +40,11 @@ h2 {
 }
 
 /* ==================== HOME SECTION ==================== */
+@media (max-width: 768px) {
+  .App .home-page {
+    gap: 1px;
+  }
+}
 .home-page {
   flex-direction: row;
   justify-content: space-between;
