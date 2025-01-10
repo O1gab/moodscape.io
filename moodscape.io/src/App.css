@@ -188,6 +188,8 @@ h2 {
 .test-section {
   width: 100%;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
 }
 
@@ -205,16 +207,22 @@ h2 {
 }
 
 .test-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 70vw;
   height: 600px;
   background-color: #1DCB5A;
   border-radius: 50px;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   box-shadow: 0 50px 30px rgba(0, 0, 0, 0.9);
+  padding: auto;
+}
+
+@media (max-width: 768px) {
+  .test-container {
+    width: 90vw;
+    height: 90vh;
+  }
 }
 
 

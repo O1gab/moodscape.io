@@ -54,12 +54,11 @@ function App() {
       <div className="test-section">
         <h2>Express your emotions through music.</h2>
         <div className="description">
-            <p>Try it out now!</p>
-            <div className="test"></div>
-          <div className="test-container">
-            <PlaylistGenerator />
-          </div>
-        </div>
+          <p>Try it out now!</p>
+         </div>
+        <div className="test-container">
+          <PlaylistGenerator />
+        </div>    
       </div>
 
       {/* FEATURES SECTION */}
