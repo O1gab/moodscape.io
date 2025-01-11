@@ -7,27 +7,37 @@ function ScrollAnimation() {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           
-          if (entry.target.tagName === 'H2') {
-            const infoP = document.querySelector('.info .description p');
-            if (infoP) {
+          const section = entry.target.closest('div[class$="-section"], .info');
+          if (section) {
+            const descriptionP = section.querySelector('.description p');
+            const contactEmail = section.querySelector('.contact-email');
+            
+            if (descriptionP) {
               setTimeout(() => {
-                infoP.classList.add('visible');
-              }, 500); // 500ms delay
+                descriptionP.classList.add('visible');
+              }, 500);
+            }
+            
+            if (contactEmail) {
+              setTimeout(() => {
+                contactEmail.classList.add('visible');
+              }, 1000);
             }
           }
         }
       });
     }, { threshold: 0.1 });
 
-    const infoH2 = document.querySelector('.info h2');
-    if (infoH2) {
-      observer.observe(infoH2);
-    }
+    // Observe all h2 elements in sections
+    const headings = document.querySelectorAll('.info h2, .test-section h2, .features h2, .download-section h2, .faq-section h2, .contact-section h2');
+    headings.forEach(heading => {
+      observer.observe(heading);
+    });
 
     return () => {
-      if (infoH2) {
-        observer.unobserve(infoH2);
-      }
+      headings.forEach(heading => {
+        observer.unobserve(heading);
+      });
     };
   }, []);
 

@@ -603,3 +603,54 @@ h2 {
       opacity: 1;
     }
   }
+
+/* Add these base styles for all section headings and descriptions */
+.info h2,
+.test-section h2,
+.features h2,
+.download-section h2,
+.faq-section h2,
+.contact-section h2 {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 1s ease;
+}
+
+.info .description p,
+.test-section .description p,
+.features .description p,
+.download-section .description p,
+.faq-section .description p,
+.contact-section .description p {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease;
+}
+
+/* Common visible state for all sections */
+.info h2.visible,
+.test-section h2.visible,
+.features h2.visible,
+.download-section h2.visible,
+.faq-section h2.visible,
+.contact-section h2.visible,
+.info .description p.visible,
+.test-section .description p.visible,
+.features .description p.visible,
+.download-section .description p.visible,
+.faq-section .description p.visible,
+.contact-section .description p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-section .contact-email {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease;
+}
+
+.contact-section .contact-email.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
