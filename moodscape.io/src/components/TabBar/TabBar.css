@@ -6,31 +6,26 @@
 
 /* Tab Bar Container */
 .tabBarContainer {
-  position: fixed;
-  top: 7%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  margin-top: 5%;
 }
 
 /* Logo */
 .logo {
-  position: absolute;
+  position: fixed;
   left: 40px;
   color: #ffffff;
   font-size: 32px;
   font-weight: 700;
-  transform: translateY(-50%);
-  top: 50%;
 }
 
 /* Tab Bar */
 .tabBar {
-  position: relative;
+  position: fixed;
   background-color: rgba(77, 77, 77, 0.5);
   border-radius: 30px;
   padding: 10px 40px;
@@ -69,28 +64,31 @@
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .tabBarContainer {
-    top: 5%;
-    position: fixed;
+    margin-top: 5%;
+    flex-direction: column;
   }
 
   .tabBar {
-    width: 50%;
+    max-width: 65%;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 5px 10px;
   }
   
   .logo {
-    font-size: 20px;
-    left: 20px;
+    position: relative;
+    left: auto;
+    transform: none;
+    top: 50px;
+    text-align: center;
   }
   
   .tabList {
-    gap: 7px;
-    max-width: 20px;
+    gap: clamp(5px, 3vw, 20px);  /* Responsive gap */
+    width: 50%;
   }
   
   .tabList a {
-    font-size: 14px;
-    padding: 8px 12px;
+    font-size: clamp(10px, 2vw, 14px);
+    padding: 7px 10px;
   }
 }
