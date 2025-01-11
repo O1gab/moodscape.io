@@ -11,7 +11,7 @@ function App() {
   const toggleAnswer = (id) => {
     setOpenAnswer(openAnswer === id ? null : id);
   };
-
+  
   return (
     <div className="App">
       <ScrollAnimation />
@@ -20,6 +20,7 @@ function App() {
       {/* HOME PAGE */}
       <div className="home-page">
         <div className="content-left">
+          <p>MoodScape</p>
           <h1>Let your emotions<br />set the playlist.
             <div className="description">
               <p>Create playlists on Spotify that reflect<br />your current mood.</p>
