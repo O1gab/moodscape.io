@@ -118,6 +118,9 @@ h2 {
   margin-right: 0%;
   width: 45%;
   align-items: right;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.9s;
 }
 
 .playlist_generation_view {
@@ -125,6 +128,9 @@ h2 {
   height: auto;
   border-radius: 100px;
   box-shadow: 0 4px 300px rgba(62, 228, 121, 0.5);
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.9s;
 }
 
 /* HOME PAGE MEDIA ADJUSTMENTS */
