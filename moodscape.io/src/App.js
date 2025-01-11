@@ -101,7 +101,7 @@ function App() {
         <div className="description">
           <p>MoodScape is currently available on TestFlight. Soon we are going to launch on AppStore, so stay tuned to us!</p>
           <div className="download-button-container">
-            <button className="download-button">Download Now</button>
+            <button className="download-button" onClick={() => window.open('https://testflight.apple.com/join/V7Wc6RPA', '_blank')}>Download Now</button>
           </div>
         </div>
       </div>
