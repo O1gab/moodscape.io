@@ -24,7 +24,7 @@ function App() {
       <TabBar />
 
       {/* HOME PAGE */}
-      <div className="home-page">
+      <div className="home-page" id="home-section">
         <div className="content-left">
           <p>MoodScape</p>
           <h1>Let your emotions<br />set the playlist.
@@ -70,7 +70,7 @@ function App() {
       </div>
 
       {/* FEATURES SECTION */}
-      <div className="features">
+      <div className="features" id="features-section">
         <h2>There’s more than just a playlist generation.</h2>
         <div className="description">
           <p>MoodScape has many other features!</p>
@@ -96,7 +96,7 @@ function App() {
       </div>
 
       {/* DOWNLOAD SECTION */}
-      <div className="download-section">
+      <div className="download-section" id="download-section">
         <div className="blur-circle"></div>
         <h2>Download MoodScape</h2>
         <div className="description">
@@ -194,7 +194,7 @@ function App() {
       </div>
 
       {/* CONTACT SECTION */}
-      <div className="contact-section">
+      <div className="contact-section" id="contact-section">
         <div className="blur-circle"></div>
         <h2>Contact Us</h2>
         <div className="description">
