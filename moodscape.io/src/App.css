@@ -44,6 +44,7 @@ h2 {
   .App .home-page {
     gap: 1px;
   }
+
 }
 .home-page {
   flex-direction: row;
@@ -110,7 +111,7 @@ h2 {
 .playlist_generation_view {
   width: 80%;
   height: auto;
-  border-radius: 85px;
+  border-radius: 100px;
   box-shadow: 0 4px 300px rgba(62, 228, 121, 0.5);
 }
 
@@ -119,14 +120,15 @@ h2 {
   .home-page {
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
   }
-
+  
   .content-left {
     width: 100%;
     margin: 0 auto;
-    margin-top: 100vw;
+    margin-top: 35vh;
     text-align: center;
+    margin-bottom: 100px;
   }
 
   .content-left h1 {
@@ -140,11 +142,13 @@ h2 {
   .content-right {
     width: 100%;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
   }
 
   .playlist_generation_view {
-    width: 100%;
-    border-radius: 40px;
+    width: 80%;
+    border-radius: clamp(50px, 8vw, 100px);
   }
 }
 
@@ -210,15 +214,6 @@ h2 {
 .info .description {
   position: relative;
   z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .info h2 {
-    font-size: 36px;
-  }
-  .info .description p {
-    font-size: 24px;
-  }
 }
 
 
@@ -430,6 +425,7 @@ h2 {
   padding: 10px;
   border-radius: 25px;
   box-shadow: 0 10px 50px rgba(62, 228, 121, 0.3);
+  text-align: center;
 }
 
 .faq-question {
@@ -453,6 +449,22 @@ h2 {
   color: #1DCB5A;
 }
 
+@media (max-width: 768px) {
+  .faq-container {
+    width: 90%;
+  }
+
+  .faq-item {
+    margin: 40px 0;
+    padding: 2px;
+  }
+
+  .faq-question {
+    padding: 15px 10px 15px 10px;
+  }
+
+}
+
 
 
 /* ==================== CONTACT SECTION ==================== */
@@ -472,6 +484,7 @@ h2 {
 
 .contact-section {
   position: relative;
+  text-align: center;
   color: #ffffff;
 }
 
