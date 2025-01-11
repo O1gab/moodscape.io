@@ -11,6 +11,12 @@ function App() {
   const toggleAnswer = (id) => {
     setOpenAnswer(openAnswer === id ? null : id);
   };
+
+  const testSectionRef = React.useRef(null);
+
+  const scrollToTestSection = () => {
+    testSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   
   return (
     <div className="App">
@@ -24,7 +30,7 @@ function App() {
           <h1>Let your emotions<br />set the playlist.
             <div className="description">
               <p>Create playlists on Spotify that reflect<br />your current mood.</p>
-              <button className="generate-button">Generate a playlist</button>
+              <button className="generate-button" onClick={scrollToTestSection}>Generate a Playlist</button>
             </div>
           </h1>
         </div>
@@ -52,7 +58,7 @@ function App() {
       </div>
 
       {/* TEST SECTION */}
-      <div className="test-section">
+      <div className="test-section" ref={testSectionRef}>
         <h2>Express your emotions through music.</h2>
         <div className="description">
           <p>Try it out now!</p>
