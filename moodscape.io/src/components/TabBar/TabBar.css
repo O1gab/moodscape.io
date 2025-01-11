@@ -69,10 +69,10 @@
   }
 
   .tabBar {
-    min-width: 50%;
-    max-width: 65%;
+    min-width: 65%;
+    max-width: 85%;
     margin: 0 auto;
-    padding: 5px 10px;
+    padding: 5px 5px;
   }
   
   .logo {
@@ -85,12 +85,17 @@
   }
   
   .tabList {
-    gap: clamp(5px, 3vw, 20px);  /* Responsive gap */
-    max-width: 50%;
+    gap: clamp(2px, 3vw, 20px);
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   
   .tabList a {
-    font-size: clamp(10px, 2vw, 14px);
-    padding: 7px 10px;
+    font-size: clamp(12px, 2vw, 18px);
+    padding: 7px 7px;
+    white-space: nowrap;
+    text-align: center;
   }
 }
