@@ -69,6 +69,7 @@
   }
 
   .tabBar {
+    min-width: 50%;
     max-width: 65%;
     margin: 0 auto;
     padding: 5px 10px;
@@ -76,15 +77,16 @@
   
   .logo {
     position: relative;
+    opacity: 0;
     left: auto;
     transform: none;
-    top: 50px;
+    top: 6.5vh;
     text-align: center;
   }
   
   .tabList {
     gap: clamp(5px, 3vw, 20px);  /* Responsive gap */
-    width: 50%;
+    max-width: 50%;
   }
   
   .tabList a {
