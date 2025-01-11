@@ -511,6 +511,8 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.5;
+  will-change: transform;
+  pointer-events: none;
 }
 
 .contact-section {
