@@ -41,6 +41,7 @@ function App() {
             autoPlay
             muted 
             playsInline
+            preload="auto"
           >
             <source src={process.env.PUBLIC_URL + '/videos/playlist_generation_view.mp4'} type="video/mp4" />
             Your browser does not support the video tag.
@@ -197,7 +198,10 @@ function App() {
         <div className="blur-circle"></div>
         <h2>Contact Us</h2>
         <div className="description">
-          <p>If you have any questions, offers, or feedback, please feel free to contact us at <a href="mailto:contact@moodscape.io">contact@moodscape.io</a>.</p>
+          <p>If you have any questions, offers, or feedback, please feel free to contact us at</p>
+          <p className="contact-email">
+            <a href="mailto:contact@moodscape.io">contact@moodscape.io</a>
+          </p>
         </div>
       </div>
 
