@@ -185,15 +185,16 @@ const PlaylistGenerator = () => {
 
 
     const MoodSelection = () => {
-        const [selectedMood, setSelectedMood] = useState(null);
-        
         const handleMoodSelect = (mood) => {
-            console.log('Selected mood:', mood);
-            setSelectedMoods(prevSelectedMoods => {
-                if (prevSelectedMoods.includes(mood)) {
-                    return prevSelectedMoods.filter(m => m !== mood);
+            setSelectedMoods(prevMoods => {
+                if (prevMoods.includes(mood)) {
+                    const newMoods = prevMoods.filter(m => m !== mood);
+                    console.log('Removing mood, new state:', newMoods);
+                    return newMoods;
                 } else {
-                    return [...prevSelectedMoods, mood];
+                    const newMoods = [...prevMoods, mood];
+                    console.log('Adding mood, new state:', newMoods);
+                    return newMoods;
                 }
             });
         };
@@ -226,49 +227,135 @@ const PlaylistGenerator = () => {
                 </div>
                 <h3>Select your current mood</h3>
                 <div className="moods-container">
-                    <div className="mood-item" onClick={() => handleMoodSelect('Happy')}>Happy</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Sad')}>Sad</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Energetic')}>Energetic</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Calm')}>Calm</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Motivated')}>Motivated</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Relaxed')}>Relaxed</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Focused')}>Focused</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Angry')}>Angry</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Fearful')}>Fearful</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Disgusted')}>Disgusted</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Surprised')}>Surprised</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Joyful')}>Joyful</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Excited')}>Excited</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Grateful')}>Grateful</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Proud')}>Proud</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Stressed')}>Stressed</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Bored')}>Bored</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Lonely')}>Lonely</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Embarrassed')}>Embarrassed</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Ashamed')}>Ashamed</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Enthusiastic')}>Enthusiastic</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Hopeful')}>Hopeful</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Elated')}>Elated</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Satisfied')}>Satisfied</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Anxious')}>Anxious</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Frustrated')}>Frustrated</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Jealous')}>Jealous</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Guilty')}>Guilty</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Envious')}>Envious</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Insecure')}>Insecure</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Overwhelmed')}>Overwhelmed</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Depressed')}>Depressed</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Hopeless')}>Hopeless</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Resentful')}>Resentful</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Bitter')}>Bitter</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Nostalgic')}>Nostalgic</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Melancholic')}>Melancholic</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Bittersweet')}>Bittersweet</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Ambivalent')}>Ambivalent</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Conflicted')}>Conflicted</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Rejected')}>Rejected</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Confused')}>Confused</div>
-                    <div className="mood-item" onClick={() => handleMoodSelect('Tired')}>Tired</div>
+                    <div className={`mood-item ${selectedMoods.includes('Happy') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Happy')}>
+                        Happy
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Sad') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Sad')}>
+                        Sad
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Energetic') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Energetic')}>
+                        Energetic
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Calm') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Calm')}>
+                        Calm
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Motivated') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Motivated')}>
+                        Motivated
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Relaxed') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Relaxed')}>
+                        Relaxed
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Focused') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Focused')}>
+                        Focused
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Angry') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Angry')}>
+                        Angry
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Fearful') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Fearful')}>
+                        Fearful
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Disgusted') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Disgusted')}>
+                        Disgusted
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Surprised') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Surprised')}>
+                        Surprised
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Joyful') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Joyful')}>
+                        Joyful
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Excited') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Excited')}>
+                        Excited
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Grateful') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Grateful')}>
+                        Grateful
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Proud') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Proud')}>
+                        Proud
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Stressed') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Stressed')}>
+                        Stressed
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Bored') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Bored')}>
+                        Bored
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Lonely') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Lonely')}>
+                        Lonely
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Embarrassed') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Embarrassed')}>
+                        Embarrassed
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Ashamed') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Ashamed')}>
+                        Ashamed
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Enthusiastic') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Enthusiastic')}>
+                        Enthusiastic
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Hopeful') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Hopeful')}>
+                        Hopeful
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Elated') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Elated')}>
+                        Elated
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Satisfied') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Satisfied')}>
+                        Satisfied
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Anxious') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Anxious')}>
+                        Anxious
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Frustrated') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Frustrated')}>
+                        Frustrated
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Jealous') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Jealous')}>
+                        Jealous
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Guilty') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Guilty')}>
+                        Guilty
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Envious') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Envious')}>
+                        Envious
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Insecure') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Insecure')}>
+                        Insecure
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Overwhelmed') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Overwhelmed')}>
+                        Overwhelmed
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Depressed') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Depressed')}>
+                        Depressed
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Hopeless') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Hopeless')}>
+                        Hopeless
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Resentful') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Resentful')}>
+                        Resentful
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Bitter') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Bitter')}>
+                        Bitter
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Nostalgic') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Nostalgic')}>
+                        Nostalgic
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Melancholic') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Melancholic')}>
+                        Melancholic
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Bittersweet') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Bittersweet')}>
+                        Bittersweet
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Ambivalent') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Ambivalent')}>
+                        Ambivalent
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Conflicted') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Conflicted')}>
+                        Conflicted
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Rejected') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Rejected')}>
+                        Rejected
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Confused') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Confused')}>
+                        Confused
+                    </div>
+                    <div className={`mood-item ${selectedMoods.includes('Tired') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Tired')}>
+                        Tired
+                    </div>
                 </div>
                 <div className="bottom-container">
                     <button className="submit-button" onClick={handleMoodSubmit}>
