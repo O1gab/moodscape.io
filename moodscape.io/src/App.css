@@ -48,6 +48,12 @@ h2 {
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .home-page {
+    margin-top: 40vh;
+  }
+}
+
 /* ==================== HOME SECTION ==================== */
 .home-page {
   flex-direction: row;
