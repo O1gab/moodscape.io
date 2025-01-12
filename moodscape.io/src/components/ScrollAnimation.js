@@ -28,7 +28,6 @@ function ScrollAnimation() {
       });
     }, { threshold: 0.1 });
 
-    // Observe all h2 elements in sections
     const headings = document.querySelectorAll('.info h2, .test-section h2, .features h2, .download-section h2, .faq-section h2, .contact-section h2');
     headings.forEach(heading => {
       observer.observe(heading);
