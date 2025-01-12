@@ -222,9 +222,6 @@ const PlaylistGenerator = () => {
 
         return (
             <div className="mood-selection">
-                <div className="back-button" onClick={() => setShowMoodSelection(false)}>
-                    <span>←</span>
-                </div>
                 <h3>Select your current mood</h3>
                 <div className="moods-container">
                     <div className={`mood-item ${selectedMoods.includes('Happy') ? 'selected' : ''}`} onClick={() => handleMoodSelect('Happy')}>
@@ -421,9 +418,6 @@ const PlaylistGenerator = () => {
         return (
             <div className="playlist-display">
                 <div className={`playlist-content ${showBlur ? 'playlist-blur' : ''}`}>
-                    <div className="back-button" onClick={onBack}>
-                        <span>←</span>
-                    </div>
                     <h3>Your Generated Playlist</h3>
                     <div className="tracks-container">
                         {tracksWithImages.map((track, index) => (
